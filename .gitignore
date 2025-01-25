@@ -75,3 +75,5 @@ crashlytics-build.properties
 .vsconfig
 
 ProjectSettings/Packages/com.unity.services.core/Settings.json
+
+*.blend1
