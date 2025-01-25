@@ -4,7 +4,7 @@ using Unity.Services.Authentication;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 public class TestRelay : MonoBehaviour
@@ -28,6 +28,7 @@ public class TestRelay : MonoBehaviour
         };
 
         await AuthenticationService.Instance.SignInAnonymouslyAsync(); //We dont gotta use a google account or whater. Creates a new anon account for the user.
+
         
     }
 
@@ -55,12 +56,20 @@ public class TestRelay : MonoBehaviour
             );
 
             NetworkManager.Singleton.StartHost();
+
+            //Invoke("SceneChange", 2);
+            SceneManager.LoadScene("LobbyScene");
         }
         catch (RelayServiceException e)
         {
             Debug.Log(e);
         }
         
+    }
+
+    public void SceneChange()
+    {
+        SceneManager.LoadScene("LobbyScene");
     }
 
     //For client.
@@ -87,6 +96,8 @@ public class TestRelay : MonoBehaviour
                 );
 
             NetworkManager.Singleton.StartClient();
+
+            SceneManager.LoadScene("LobbyScene");
         }
         catch (RelayServiceException e)
         {
