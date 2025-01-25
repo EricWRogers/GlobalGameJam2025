@@ -23,7 +23,7 @@ public class Bumper : NetworkBehaviour
             if (isLocal)
             {
                 // server
-                //HandleBounce(clientId, col);
+                HandleBounce(clientId, col);
 
                 // local
                 GameObject player = col.gameObject;
@@ -75,17 +75,22 @@ public class Bumper : NetworkBehaviour
             if (isLocal)
             {
                 anim.SetBool("didHit", false);
-                //BounceResetClientRPC();
+
+                ulong playerNetworkObjectRef = col.GetComponent<NetworkObject>().NetworkObjectId;
+                BounceResetClientRPC(clientId, playerNetworkObjectRef);
             }
         }
     }
 
     [ClientRpc]
-    public void BounceResetClientRPC()
+    public void BounceResetClientRPC(ulong clientId, ulong reference)
     {
-        /*if (NetworkManager.Singleton.LocalClientId != clientId)
+        if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(reference, out var playerNetworkObject))
+        {
+            if (NetworkManager.Singleton.LocalClientId != clientId)
             {
-                anim.SetBool("didHit", true);
-            }*/
+                anim.SetBool("didHit", false);
+            }
+        }
     }
 }
