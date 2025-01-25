@@ -56,6 +56,10 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
         if (IsMoving() && currentState is not PlayerMovement) {
             ChangeState<PlayerMovement>();
         }
+
+        if (transform.position.y <= GameRules.Instance.killLevel) {
+            GameRules.Instance.KillPlayer(this);
+        }
     }
 
     private bool IsMoving() {
