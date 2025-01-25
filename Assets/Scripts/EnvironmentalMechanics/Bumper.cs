@@ -12,11 +12,23 @@ public class Bumper : NetworkBehaviour
 
         if (col.gameObject.CompareTag("Player"))
         {
-            ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId;
-            HandleBounce(clientId, col);
+            // TODO (LOGAN) : Fix
+            //ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId;
+            //HandleBounce(clientId, col);
 
+            GameObject player = col.gameObject; //playerNetworkObject.gameObject;
 
-           
+            //Collider col = playerObject.GetComponent<Collider>();
+
+            if (col != null)
+            {
+                anim.SetBool("didHit", true);
+
+                Rigidbody rb = player.GetComponent<Rigidbody>();
+                float mag = rb.linearVelocity.magnitude;
+                Vector3 dir = (col.transform.position - transform.position).normalized;
+                rb.AddForce(dir * (bounceFactor + mag), ForceMode.Impulse);
+            }
         }
     }
 
