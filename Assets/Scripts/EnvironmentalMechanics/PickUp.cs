@@ -28,7 +28,7 @@ public class PickUp : NetworkBehaviour
 
     private void HandlePickup(ulong clientId)
     {
-        VisualPickupHandlerClientRpc();
+        VisualPickupHandlerClientRpc(); //When not specifying, it sends to ALL. Remember that Client RPCs must be called from the server.
 
         PickupStatChangeServerRpc(clientId);
 
@@ -54,6 +54,8 @@ public class PickUp : NetworkBehaviour
                player.ApplySpeedBoost(speedBoostAmount, boostDuration); ex
             }*/
         }
+
+        //You would call a client RPC here to update healthbars for everyone or somethin.
     }
 }
 
