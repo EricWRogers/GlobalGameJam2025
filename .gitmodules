@@ -1,0 +1,3 @@
+[submodule "FOGPI-2025-Starter"]
+	path = FOGPI-2025-Starter
+	url = git@github.com:EricWRogers/FOGPI-2025-Starter.git
