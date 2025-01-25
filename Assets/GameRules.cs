@@ -34,7 +34,7 @@ public class GameRules : MonoBehaviour
     private void Start() {
         TimerManager.Instance.CreateTimer(matchTime, EndMatch, out matchTimeRemaining);
 
-        GetAllPlayers().ToDictionary(item => item, item => stocks);
+        stockDictionary = GetAllPlayers().ToDictionary(item => item, item => stocks);
 
         //TODO spawn the players at spawn points
     }
@@ -47,7 +47,7 @@ public class GameRules : MonoBehaviour
             //TODO turn off player
         }
 
-        if (stockDictionary.Values.Count(value => value > 0) == 1) {
+        if (stockDictionary.Values.Count(value => value <= 0) == 1) {
             EndMatch();
         }
 
@@ -56,7 +56,20 @@ public class GameRules : MonoBehaviour
 
     private void EndMatch() {
         var winner = stockDictionary.OrderByDescending(kvp => kvp.Value).First();
-        Debug.Log(winner.Key.name);
+        ShowWinner();
+        stockDictionary.Remove(winner.Key);
+        ShowLosers();
+        
+    }
+    
+    public void ShowLosers() {
+        foreach (var item in stockDictionary)
+        {
+            Debug.Log($"Loser: {item.Key.name}");
+        }
+    }
 
+    public void ShowWinner() {
+        Debug.Log($"Winner: {stockDictionary.OrderByDescending(kvp => kvp.Value).First().Key}");
     }
 }
