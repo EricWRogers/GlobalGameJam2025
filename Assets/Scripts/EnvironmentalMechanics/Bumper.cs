@@ -8,7 +8,7 @@ public class Bumper : NetworkBehaviour
 
     public void OnTriggerEnter(Collider col)
     {
-        if (!IsServer) return;
+        //if (!IsServer) return;
 
         if (col.gameObject.CompareTag("Player"))
         {
