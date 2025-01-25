@@ -3,11 +3,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LobbyManager : MonoBehaviour
 {
     public GameObject playerUIPrefab; 
-    public GameObject playerListContainer; 
+    public GameObject playerListContainer;
+    public TMP_Text joinCodeText;
+
+    public string joinCode;
+
+    private JankCodeBetweenScenes JankCodeBetweenScenes = JankCodeBetweenScenes.Instance;
 
     private Dictionary<ulong, GameObject> playerUIInstances = new Dictionary<ulong, GameObject>();
 
@@ -53,6 +59,12 @@ public class LobbyManager : MonoBehaviour
         {
             NetworkManager.Singleton.SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
         }
+    }
+
+    private void Start()
+    {
+        joinCodeText.text = JankCodeBetweenScenes.joinCode;
+
     }
 }
 

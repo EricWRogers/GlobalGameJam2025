@@ -34,6 +34,7 @@ public class GameManagerGame : MonoBehaviour
         {
             GameObject playerInstance = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
 
+
             NetworkObject playerNetworkObject = playerInstance.GetComponent<NetworkObject>();
             playerNetworkObject.SpawnAsPlayerObject(clientId);
         }
