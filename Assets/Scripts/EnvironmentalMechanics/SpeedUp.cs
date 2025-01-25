@@ -8,7 +8,7 @@ public class SpeedUp : MonoBehaviour
     {
         if(col.gameObject.CompareTag("Player"))
         {
-            col.GetComponent<Rigidbody>().AddForce(transform.forward * (col.GetComponent<Rigidbody>().linearVelocity.magnitude + speedingTicket), ForceMode.Impulse);
+            col.GetComponentInParent<Rigidbody>().AddForce(transform.forward * (col.GetComponentInParent<Rigidbody>().linearVelocity.magnitude + speedingTicket), ForceMode.Impulse);
         }
     }
 }
