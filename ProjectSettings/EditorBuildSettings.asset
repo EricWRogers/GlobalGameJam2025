@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NetcodeForEntitiesSetup/Scenes/Gameplay.unity
     guid: c40031679d3c8054283730d7d4a3dadc
+  - enabled: 1
+    path: Assets/Scenes/LogansTestScene.unity
+    guid: 1d2b410209b0ba344a0561640a66fd72
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -4,12 +4,16 @@ using Unity.Services.Authentication;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using TMPro;
+
+using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
 public class TestRelay : MonoBehaviour
 {
     [TooltipAttribute("This does not include the host. If we are making a four player game, we need to specify 3.")]
     public int numberOfPlayer = 3;
 
     public TMP_InputField joinInput;
+    [TooltipAttribute("Don't touch this bruh.")]
     public string joinCode;
     async void Start()
     {
@@ -40,6 +44,17 @@ public class TestRelay : MonoBehaviour
 
             string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
             Debug.Log(joinCode);
+
+
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetHostRelayData( //I couldent tell ya.
+                allocation.RelayServer.IpV4,
+                (ushort)allocation.RelayServer.Port,
+                allocation.AllocationIdBytes,
+                allocation.Key,
+                allocation.ConnectionData
+            );
+
+            NetworkManager.Singleton.StartHost();
         }
         catch (RelayServiceException e)
         {
@@ -49,6 +64,7 @@ public class TestRelay : MonoBehaviour
     }
 
     //For client.
+
     public async void JoinRelay(string _joinCode = "")
     {
         if(_joinCode == "")
@@ -58,8 +74,19 @@ public class TestRelay : MonoBehaviour
         try
         {
             Debug.Log("Joining " + _joinCode);
-            await RelayService.Instance.JoinAllocationAsync(_joinCode);
+            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(_joinCode);
             Debug.Log("Joined " + _joinCode);
+
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetClientRelayData(
+                joinAllocation.RelayServer.IpV4,
+                (ushort)joinAllocation.RelayServer.Port,
+                joinAllocation.AllocationIdBytes,
+                joinAllocation.Key,
+                joinAllocation.ConnectionData,
+                joinAllocation.HostConnectionData
+                );
+
+            NetworkManager.Singleton.StartClient();
         }
         catch (RelayServiceException e)
         {
