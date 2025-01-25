@@ -589,6 +589,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7598661614621260912, guid: 915624ab4f7f77c4facdd7d8a50ec5b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 121522724
+      objectReference: {fileID: 0}
     - target: {fileID: 5039881448833817460, guid: 915624ab4f7f77c4facdd7d8a50ec5b9, type: 3}
       propertyPath: m_Name
       value: Bumper
