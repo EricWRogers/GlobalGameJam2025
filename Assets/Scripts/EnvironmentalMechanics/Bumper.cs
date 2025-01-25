@@ -12,16 +12,21 @@ public class Bumper : NetworkBehaviour
 
         if (col.gameObject.CompareTag("Player"))
         {
-            // TODO (LOGAN) : Fix
-            //ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId;
-            //HandleBounce(clientId, col);
+            ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId;
 
-            GameObject player = col.gameObject; //playerNetworkObject.gameObject;
+            bool isLocal = true;
 
-            //Collider col = playerObject.GetComponent<Collider>();
+            if (NetworkManager.Singleton)
+                isLocal = NetworkManager.Singleton.LocalClientId == clientId;
 
-            if (col != null)
+
+            if (isLocal)
             {
+                // server
+                //HandleBounce(clientId, col);
+
+                // local
+                GameObject player = col.gameObject;
                 anim.SetBool("didHit", true);
 
                 Rigidbody rb = player.GetComponent<Rigidbody>();
@@ -43,15 +48,9 @@ public class Bumper : NetworkBehaviour
     {
         if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(reference, out var playerNetworkObject))
         {
-            GameObject playerObject = playerNetworkObject.gameObject;
-
-            Collider col = playerObject.GetComponent<Collider>();
-
-            if (col != null)
+            if (NetworkManager.Singleton.LocalClientId != clientId)
             {
                 anim.SetBool("didHit", true);
-                Vector3 bounce = (col.transform.position - transform.position).normalized;
-                col.GetComponent<Rigidbody>().AddForce(bounce * bounceFactor, ForceMode.Impulse);
             }
         }
     }
@@ -62,17 +61,31 @@ public class Bumper : NetworkBehaviour
 
     }
 
-    public void OnTriggerExit(Collider col) 
+    public void OnTriggerExit(Collider col)
     {
-        if(col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player"))
         {
-            BounceResetClientRPC();
+            ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId;
+
+            bool isLocal = true;
+
+            if (NetworkManager.Singleton)
+                isLocal = NetworkManager.Singleton.LocalClientId == clientId;
+            
+            if (isLocal)
+            {
+                anim.SetBool("didHit", false);
+                //BounceResetClientRPC();
+            }
         }
     }
 
     [ClientRpc]
     public void BounceResetClientRPC()
     {
-        anim.SetBool("didHit", false);
+        /*if (NetworkManager.Singleton.LocalClientId != clientId)
+            {
+                anim.SetBool("didHit", true);
+            }*/
     }
 }
