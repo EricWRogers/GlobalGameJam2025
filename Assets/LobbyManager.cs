@@ -63,8 +63,12 @@ public class LobbyManager : MonoBehaviour
 
     private void Start()
     {
+        AddPlayerToLobby(NetworkManager.Singleton.LocalClientId);
+
         joinCodeText.text = JankCodeBetweenScenes.joinCode;
 
     }
+
+    
 }
 

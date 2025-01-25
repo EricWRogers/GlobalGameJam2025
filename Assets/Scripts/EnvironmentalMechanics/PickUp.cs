@@ -1,24 +1,59 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class PickUp : MonoBehaviour
+public class PickUp : NetworkBehaviour
 {
     public ParticleSystem bubbles;
     public GameObject bottle;
     public float rotateSpeed = 45f;
 
+
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, rotateSpeed * Time.deltaTime, 0);
+        transform.Rotate(0, rotateSpeed * Time.deltaTime, 0); //When we don't specify a RPC, ALL clients run this code.
     }
 
     public void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.CompareTag("Player"))
+        if (!IsServer) return;//This will ensure the SERVER is preforming this. 
+
+        if (col.CompareTag("Player")) 
         {
-            bubbles.Play();
-            bottle.SetActive(false);
-            Destroy(gameObject, 4f);
+            ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId; //Get the client who did the deed.
+            
+            HandlePickup(clientId);
+        }
+    }
+
+    private void HandlePickup(ulong clientId)
+    {
+        VisualPickupHandlerClientRpc();
+
+        PickupStatChangeServerRpc(clientId);
+
+        
+    }
+
+    [ClientRpc]
+    private void VisualPickupHandlerClientRpc() //Have all clients see the visual change.
+    {
+        bubbles.Play();
+        bottle.SetActive(false);
+        NetworkObject.Destroy(gameObject, 4f); //This will ensure the object is destroyed across ALL clients. Obvs pickups will need to be network objs.
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void PickupStatChangeServerRpc(ulong clientId)
+    {
+        if (NetworkManager.Singleton.ConnectedClients.TryGetValue(clientId, out var client)) //Ensuring we only apply the change to the correct client.
+        {
+           /* var player = client.PlayerObject.GetComponent<playerClassOrSomething>();
+            if (player != null)
+            {
+               player.ApplySpeedBoost(speedBoostAmount, boostDuration); ex
+            }*/
         }
     }
 }
+
