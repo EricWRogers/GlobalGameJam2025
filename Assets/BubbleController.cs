@@ -4,6 +4,7 @@ using Unity.Cinemachine;
 using System.Collections.Generic;
 using UnityEngine.Timeline;
 using System.Linq;
+using Unity.Netcode;
 
 public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAxisOwner {
     public override IState[] States => new IState[] { new PlayerIdle(this), new PlayerMovement(this), };
@@ -59,7 +60,15 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     }
 
     private void Awake() {
-        if (IsOwner) {
+        ulong clientId = transform.GetComponent<NetworkObject>().OwnerClientId;
+
+        bool isLocal = true;
+
+        if (NetworkManager.Singleton)
+            isLocal = NetworkManager.Singleton.LocalClientId == clientId;
+
+
+        if (isLocal) {
             var rig = Instantiate(cameraRig);
             rig.GetComponentInChildren<CinemachineCamera>().Follow = transform;
         }
