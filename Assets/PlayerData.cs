@@ -13,6 +13,9 @@ public class PlayerData : MonoBehaviour
 
     public GameObject livesContainer;
 
+    private float lastLifeChangeTime = 0f; 
+    public float lifeChangeCooldown = 1f;
+
     ulong clientId;
     bool isLocal = true;
     private void Start()
@@ -46,8 +49,12 @@ public class PlayerData : MonoBehaviour
         {
             if (lives.Count != stocks)
             {
-                Destroy(livesContainer.transform.GetChild(lives.Count -1).gameObject);
-                lives.RemoveAt(lives.Count - 1);
+                if (lives.Count != stocks && Time.time - lastLifeChangeTime >= lifeChangeCooldown)
+                {
+                    lastLifeChangeTime = Time.time;
+                    Destroy(livesContainer.transform.GetChild(lives.Count - 1).gameObject);
+                    lives.RemoveAt(lives.Count - 1);
+                }
                 
             }
         }
