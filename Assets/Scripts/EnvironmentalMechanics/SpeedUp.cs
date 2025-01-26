@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class SpeedUp : NetworkBehaviour
 {
+    public bool snapToCenter = false;
     public float speedingTicket = 20f;
     public GameObject direction;
     public AudioSource audio;
@@ -23,7 +24,11 @@ public class SpeedUp : NetworkBehaviour
             {
                 // server
                 HandleSpeed(clientId, col);
-                audio.Play();    
+                audio.Play();
+
+                if (snapToCenter)
+                    col.GetComponentInParent<Rigidbody>().gameObject.transform.position = transform.position;
+
                 col.GetComponentInParent<Rigidbody>().AddForce(direction.transform.forward * (col.GetComponentInParent<Rigidbody>().linearVelocity.magnitude + speedingTicket), ForceMode.Impulse);
             }
         }
