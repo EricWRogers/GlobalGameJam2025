@@ -44,11 +44,7 @@ public class GameRules : NetworkBehaviour
         {
             Destroy(this);
         }
-    }
-
-    private void OnEnable()
-    {
-        NetworkManager.Singleton.OnClientConnectedCallback += SpawnPlayer;
+        spawns = GameObject.FindGameObjectsWithTag("SpawnPoint");
     }
 
     private void Start()
