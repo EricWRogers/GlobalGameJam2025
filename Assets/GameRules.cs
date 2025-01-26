@@ -3,6 +3,7 @@ using OmnicatLabs.Timers;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.InputSystem.Controls;
+using Unity.Netcode;
 
 public class GameRules : MonoBehaviour
 {
@@ -29,12 +30,12 @@ public class GameRules : MonoBehaviour
         spawns = GameObject.FindGameObjectsWithTag("SpawnPoint");
     }
 
-    private BubbleController[] GetAllPlayers() => FindObjectsByType<BubbleController>(FindObjectsSortMode.None);
-
     private void Start() {
         TimerManager.Instance.CreateTimer(matchTime, EndMatch, out matchTimeRemaining);
 
-        stockDictionary = GetAllPlayers().ToDictionary(item => item, item => stocks);
+        foreach (var kvp in NetworkManager.Singleton.ConnectedClients) {
+            stockDictionary.Add(kvp.Value.PlayerObject.GetComponent<BubbleController>(), stocks);
+        }
 
         //TODO spawn the players at spawn points
     }
