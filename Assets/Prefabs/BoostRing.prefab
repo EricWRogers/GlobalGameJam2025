@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoostRing
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0780ca69f6cf2f57da43c6fb756b39a0, type: 3}
+      propertyPath: m_TagString
+      value: MapMechanic
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -117,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3141074029
+  GlobalObjectIdHash: 3756532665
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
