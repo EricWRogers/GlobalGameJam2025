@@ -52,6 +52,7 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
+   
     private void RemovePlayerFromLobby(ulong clientId)
     {
         if (playerUIInstances.TryGetValue(clientId, out GameObject playerUI))
@@ -75,6 +76,8 @@ public class LobbyManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         AddPlayerToLobby(NetworkManager.Singleton.LocalClientId);
 
         joinCodeText.text = JankCodeBetweenScenes.joinCode;

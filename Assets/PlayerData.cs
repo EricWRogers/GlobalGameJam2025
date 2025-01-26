@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour 
@@ -47,7 +48,7 @@ public class PlayerData : MonoBehaviour
     {
         if (isLocal)
         {
-            if (lives.Count != stocks)
+            if (lives.Count != stocks && lives.Count != 0)
             {
                 if (lives.Count != stocks && Time.time - lastLifeChangeTime >= lifeChangeCooldown)
                 {
@@ -55,7 +56,10 @@ public class PlayerData : MonoBehaviour
                     Destroy(livesContainer.transform.GetChild(lives.Count - 1).gameObject);
                     lives.RemoveAt(lives.Count - 1);
                 }
-                
+            }
+            else
+            {
+                return;   
             }
         }
     }
