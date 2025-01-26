@@ -100,4 +100,16 @@ public class Bumper : NetworkBehaviour
             }
         }
     }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void BounceResetServerRPC(ulong clientId, ulong reference)
+    {
+        if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(reference, out var playerNetworkObject))
+        {
+            if (NetworkManager.Singleton.LocalClientId != clientId)
+            {
+                anim.SetBool("didHit", false);
+            }
+        }
+    }
 }
