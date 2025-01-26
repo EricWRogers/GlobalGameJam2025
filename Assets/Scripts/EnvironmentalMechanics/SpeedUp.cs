@@ -1,9 +1,10 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class SpeedUp : MonoBehaviour
+public class SpeedUp : NetworkBehaviour
 {
     public float speedingTicket = 20f;
+    public GameObject direction;
 
     void OnTriggerEnter(Collider col)
     {
@@ -21,7 +22,7 @@ public class SpeedUp : MonoBehaviour
             {
                 // server
                 HandleSpeed(clientId, col);    
-                col.GetComponent<Rigidbody>().AddForce(transform.forward * (col.GetComponent<Rigidbody>().linearVelocity.magnitude + speedingTicket), ForceMode.Impulse);
+                col.GetComponent<Rigidbody>().AddForce(direction.transform.forward * (col.GetComponent<Rigidbody>().linearVelocity.magnitude + speedingTicket), ForceMode.Impulse);
             }
         }
     }
