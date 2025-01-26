@@ -181,6 +181,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c090dfc2e527d840bb2c3df15e2cfce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2559777695608969048}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c090dfc2e527d840bb2c3df15e2cfce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1796096771181328877}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c090dfc2e527d840bb2c3df15e2cfce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1570255701558269356}
   m_SourcePrefab: {fileID: 100100000, guid: 3c090dfc2e527d840bb2c3df15e2cfce, type: 3}
 --- !u!4 &4891997669500482900 stripped
 Transform:
@@ -216,3 +222,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea8ca862718a69e4180184edf5ff8778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &1796096771181328877
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5235449250207051758}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.010000003
+  m_Center: {x: 0.0000000013969839, y: 0, z: -0.0000000018626451}
+--- !u!135 &1570255701558269356
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5235449250207051758}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.013
+  m_Center: {x: 0.0000000013969839, y: 0, z: -0.0000000018626451}
