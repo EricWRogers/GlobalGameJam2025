@@ -5,6 +5,7 @@ using TMPro;
 using Unity.Netcode;
 using Unity.Services.Lobbies.Models;
 using Unity.Services.Matchmaker.Models;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -159,11 +160,14 @@ public class GameRules : NetworkBehaviour
 
         BubbleController player = client.PlayerObject.GetComponent<BubbleController>();
 
-        UpdateClientStockClientRPC(id);
+        
 
         if (stockDictionary[player] >= 0)
         {
+            //client.PlayerObject.Despawn(true);
+            
             stockDictionary[player]--;
+            UpdateClientStockClientRPC(id, stockDictionary[player]);
         }
         else
         {
@@ -171,19 +175,32 @@ public class GameRules : NetworkBehaviour
             //TODO turn off player
         }
 
-
+        ClientPositionCorrectClientRPC(client.ClientId);
         player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
     }
 
     [ClientRpc]
-    private void UpdateClientStockClientRPC(ulong id)
+    private void UpdateClientStockClientRPC(ulong id, int updatedStocks)
     {
-        NetworkManager.Singleton.ConnectedClients.TryGetValue(id, out var client);
+        if (!NetworkManager.Singleton.ConnectedClients.TryGetValue(id, out var client))
+            return;
+
+        BubbleController player = client.PlayerObject.GetComponent<BubbleController>();
+        PlayerData playerData = client.PlayerObject.GetComponent<PlayerData>();
+
+        
+        playerData.stocks = updatedStocks;
+        player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
+    }
+
+    [ClientRpc]
+    private void ClientPositionCorrectClientRPC(ulong id)
+    {
+        if (!NetworkManager.Singleton.ConnectedClients.TryGetValue(id, out var client))
+            return;
 
         BubbleController player = client.PlayerObject.GetComponent<BubbleController>();
         player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
-        client.PlayerObject.GetComponent<PlayerData>().stocks--;
-        
     }
 
     private void EndMatch()
