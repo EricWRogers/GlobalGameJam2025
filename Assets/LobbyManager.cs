@@ -33,9 +33,6 @@ public class LobbyManager : MonoBehaviour
     {
        
       ServerHandleLobbyUIServerRPC();
-        
-        
-
 
         int colorIndex = 0;
         

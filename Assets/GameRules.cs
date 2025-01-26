@@ -13,7 +13,7 @@ public class GameRules : NetworkBehaviour
 
     [HideInInspector]
     public Timer matchTimeRemaining;
-    public float killLevel = -10f;
+    public float killLevel = 16f;
 
     private Dictionary<BubbleController, int> stockDictionary = new Dictionary<BubbleController, int>();
 
@@ -224,7 +224,8 @@ public class GameRules : NetworkBehaviour
     {
         if (NetworkManager.Singleton.IsServer)
         {
-            GameObject playerInstance = Instantiate(playerPrefab, GetSpawnPoint().position, GetSpawnPoint().rotation);
+            Transform spawnpoint = GetSpawnPoint();
+            GameObject playerInstance = Instantiate(playerPrefab, spawnpoint.position, spawnpoint.rotation);
 
 
             NetworkObject playerNetworkObject = playerInstance.GetComponent<NetworkObject>();
