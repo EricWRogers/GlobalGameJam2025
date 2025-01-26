@@ -43,6 +43,7 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     public float dashForce = 10f;
     [HideInInspector]
     public AbilityButtonControl btnCtrl;
+    public ReticleController reticleController;
 
 
     void IInputAxisOwner.GetInputAxes(List<IInputAxisOwner.AxisDescriptor> axes) {
@@ -109,6 +110,7 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
         players = GameObject.FindGameObjectsWithTag("Player").ToList();
         players.Remove(gameObject);
         btnCtrl = GetComponentInChildren<AbilityButtonControl>();
+        reticleController = GetComponentInChildren<ReticleController>();
     }
 
     public override void Update() {
@@ -139,7 +141,14 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
         }
 
         TrackPkayers();
-        Debug.Log(closestPlayer.name);
+    }
+
+    public void ShowReticle() {
+        reticleController.gameObject.SetActive(true);
+    }
+
+    public void HideReticle() {
+        reticleController.gameObject.SetActive(false);
     }
 
     private void TrackPkayers() {

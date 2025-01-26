@@ -87,11 +87,12 @@ public class PlayerMovement : IState {
     public override void Update() {
         ProcessInput();
 
-        
 
 
-        if (bubbleController.Fire.Value >= 1 && !dashed) {
-            if (DistanceToClosestPlayer() <= bubbleController.distanceToDash) {
+
+        if (DistanceToClosestPlayer() <= bubbleController.distanceToDash) {
+            bubbleController.ShowReticle();
+            if (bubbleController.Fire.Value >= 1 && !dashed) {
                 dashed = true;
                 TimerManager.Instance.CreateTimer(bubbleController.abilityCooldown, () => dashed = false, out Timer timer);
                 bubbleController.btnCtrl.StartCoolDown(timer);
@@ -99,6 +100,8 @@ public class PlayerMovement : IState {
                 rb.linearVelocity = desiredVelocity;
                 //rb.AddForce(DirectionOfClosestPlayer() * bubbleController.dashForce, ForceMode.Impulse);
             }
+        } else {
+            bubbleController.HideReticle();
         }
 
         //if (Vector3.Distance(bubbleController.transform.position, bubbleController.closestPlayer.transform.position) < bubbleController.distaceToCollide) {
