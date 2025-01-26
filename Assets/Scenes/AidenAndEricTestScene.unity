@@ -13075,6 +13075,14 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 4207175107
       objectReference: {fileID: 0}
+    - target: {fileID: 4961696420738578235, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961696420738578235, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4967943053994200378, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3139561301
