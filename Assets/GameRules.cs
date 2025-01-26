@@ -165,7 +165,7 @@ public class GameRules : NetworkBehaviour
         if (stockDictionary[player] >= 0)
         {
             //client.PlayerObject.Despawn(true);
-            
+            Debug.Log("Ran Kill for " + gameObject.name + client.ClientId);
             stockDictionary[player]--;
             UpdateClientStockClientRPC(id, stockDictionary[player]);
         }

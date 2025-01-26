@@ -47,6 +47,9 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     public ReticleController reticleController;
 
     private bool isBelowKillLevel = false;
+
+    private float lastLifeChangeTime = 0f;
+    public float lifeChangeCooldown = .5f;
     void IInputAxisOwner.GetInputAxes(List<IInputAxisOwner.AxisDescriptor> axes) {
         axes.Add(new() {
             DrivenAxis = () => ref MoveX,
@@ -135,6 +138,8 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
 
         ulong clientId = gameObject.GetComponent<NetworkObject>().OwnerClientId;
 
+        
+
         bool isLocal = true;
 
         if (NetworkManager.Singleton)
@@ -143,18 +148,24 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
         if (isLocal)
         {
 
-
-            if (transform.position.y <= GameRules.Instance.killLevel && isBelowKillLevel == false) {
-                isBelowKillLevel = true;
-                var id = GetComponent<NetworkObject>().OwnerClientId;
-
-
-                GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-                GameRules.Instance.KillPlayerServerRPC(id);
-            }
-            else
+            if (Time.time - lastLifeChangeTime >= lifeChangeCooldown)
             {
-                isBelowKillLevel = false;
+                lastLifeChangeTime = Time.time;
+
+
+                if (transform.position.y <= GameRules.Instance.killLevel && isBelowKillLevel == false)
+                {
+                    isBelowKillLevel = true;
+                    var id = GetComponent<NetworkObject>().OwnerClientId;
+
+
+                    GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+                    GameRules.Instance.KillPlayerServerRPC(id);
+                }
+                else
+                {
+                    isBelowKillLevel = false;
+                }
             }
         }
         TrackPkayers();
