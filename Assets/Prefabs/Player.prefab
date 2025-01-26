@@ -315,10 +315,10 @@ MonoBehaviour:
   lives: []
   stockIconList:
   - {fileID: 6822656555327060224, guid: 2bb2fa929e827144ba268d1d52c32f85, type: 3}
+  - {fileID: 1407121849286023592, guid: b59eddc590256954387c483f641059b1, type: 3}
   - {fileID: 9034088081216304739, guid: 33eefacc4e96c10489ff0700fb692933, type: 3}
   - {fileID: 1797179734996160695, guid: efb3af9d305af194e83e285610dae391, type: 3}
-  - {fileID: 1407121849286023592, guid: b59eddc590256954387c483f641059b1, type: 3}
-  stocks: 0
+  stocks: 3
   color: 0
   livesContainer: {fileID: 4141280487884864042}
 --- !u!1 &2613623521428241601
