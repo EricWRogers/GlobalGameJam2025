@@ -59,8 +59,10 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     }
 
     private void Awake() {
-        var rig = Instantiate(cameraRig);
-        rig.GetComponentInChildren<CinemachineCamera>().Follow = transform;
+        if (IsOwner) {
+            var rig = Instantiate(cameraRig);
+            rig.GetComponentInChildren<CinemachineCamera>().Follow = transform;
+        }
     }
 
     protected override void Start() {

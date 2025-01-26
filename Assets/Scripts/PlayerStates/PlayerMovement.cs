@@ -13,6 +13,7 @@ public class PlayerMovement : IState {
     private Quaternion m_Upsidedown;
     private Rigidbody rb;
     private Vector3 moveDirection;
+    private Vector3 lastMagnitude;
 
     public PlayerMovement(BubbleController _controller) : base(_controller) {
         bubbleController = _controller;
@@ -46,6 +47,8 @@ public class PlayerMovement : IState {
         if (bubbleController.closestPlayer != null) {
             SoftTrack();
         }
+
+
     }
 
     private void SoftTrack() {
