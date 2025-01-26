@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4e654e3e53ef4954f904a7324379740b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f7d8030b84ebba43b44c8dfd9090e32, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 8901308896831469050}
   - component: {fileID: 2260871967539122338}
   m_Layer: 0
-  m_Name: PlayerOBJ
+  m_Name: PlayerOBJ Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb5020dc0455e004dad7e0704e04daa3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ba6e2d82522bae4e9b719d206073f17, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
