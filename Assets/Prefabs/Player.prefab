@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7858264396984162198}
   - component: {fileID: 1281616772725036914}
   - component: {fileID: 3679436519153245097}
+  - component: {fileID: -677814486171002168}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -50,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3093199106
+  GlobalObjectIdHash: 2829390670
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -133,6 +134,8 @@ MonoBehaviour:
   trackingRange: 5
   minClosenessToTrack: 0
   cameraRig: {fileID: 1347715997145132070, guid: bfed5be9d25e2b74daf69931f35c2cf0, type: 3}
+  distaceToCollide: 2
+  knockbackMultiplier: 10
 --- !u!114 &2810023941438414442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +300,19 @@ MonoBehaviour:
   UseRigidBodyForMotion: 1
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &-677814486171002168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501043408524294247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243773f571a4bd3439ad34f2e50dbbd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackMultiplier: 1.5
 --- !u!1 &7354168840528377853
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +325,7 @@ GameObject:
   - component: {fileID: 8095461554222253517}
   - component: {fileID: 2943452422064781171}
   - component: {fileID: 5213567625307481418}
+  - component: {fileID: 6358926409156040697}
   m_Layer: 0
   m_Name: Model
   m_TagString: Player
@@ -404,4 +421,25 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &6358926409156040697
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354168840528377853}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.66
   m_Center: {x: 0, y: 0, z: 0}
