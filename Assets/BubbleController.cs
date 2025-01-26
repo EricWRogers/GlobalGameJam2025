@@ -67,7 +67,6 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
             rig = Instantiate(cameraRig);
             var cc = GetComponentInChildren<CinemachineCamera>();
             cc.Follow = transform;
-            cc.Priority = cc.Priority -1;
         }
     }
 
