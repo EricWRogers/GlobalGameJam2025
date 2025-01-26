@@ -60,6 +60,17 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
         });
     }
 
+    public override void OnNetworkSpawn() {
+        base.OnNetworkSpawn();
+
+        if (IsLocalPlayer) {
+            rig = Instantiate(cameraRig);
+            var cc = GetComponentInChildren<CinemachineCamera>();
+            cc.Follow = transform;
+            cc.Priority = cc.Priority -1;
+        }
+    }
+
     private void Awake() {
 
         if (!IsServer) {
@@ -67,19 +78,12 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
         }
 
         ulong clientId = transform.GetComponent<NetworkObject>().OwnerClientId;
-
-        bool isLocal = true;
-
-        if (NetworkManager.Singleton)
-            isLocal = NetworkManager.Singleton.LocalClientId == clientId;
-
-
         
-            var id = GetComponent<NetworkObject>().OwnerClientId;
-            NetworkManager.Singleton.ConnectedClients.TryGetValue(id, out var client);
+        var id = GetComponent<NetworkObject>().OwnerClientId;
+        NetworkManager.Singleton.ConnectedClients.TryGetValue(id, out var client);
             
-            rig = Instantiate(cameraRig);
-            rig.GetComponentInChildren<CinemachineCamera>().Follow = client.PlayerObject.transform;
+        rig = Instantiate(cameraRig);
+        rig.GetComponentInChildren<CinemachineCamera>().Follow = client.PlayerObject.transform;
         
     }
 
