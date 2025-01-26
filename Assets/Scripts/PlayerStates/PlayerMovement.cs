@@ -1,9 +1,6 @@
 using UnityEngine;
 using OmnicatLabs.Input;
 using Unity.Cinemachine;
-using static Unity.Cinemachine.Samples.SimplePlayerController;
-using Unity.Netcode;
-using UnityEditor.Build;
 using OmnicatLabs.Timers;
 
 public class PlayerMovement : IState {

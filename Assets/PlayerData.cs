@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using Unity.Netcode;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour 
