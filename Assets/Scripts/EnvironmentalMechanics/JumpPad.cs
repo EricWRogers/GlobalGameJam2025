@@ -1,7 +1,7 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class JumpPad : MonoBehaviour
+public class JumpPad : NetworkBehaviour
 {
     public Animator anim;
     public float springForce = 10f;
