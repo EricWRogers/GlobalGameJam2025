@@ -3,6 +3,8 @@ using OmnicatLabs.Input;
 using Unity.Cinemachine;
 using static Unity.Cinemachine.Samples.SimplePlayerController;
 using Unity.Netcode;
+using UnityEditor.Build;
+using OmnicatLabs.Timers;
 
 public class PlayerMovement : IState {
     private InputAxis moveX, moveZ;
@@ -14,6 +16,7 @@ public class PlayerMovement : IState {
     private Quaternion m_Upsidedown;
     private Rigidbody rb;
     private Vector3 moveDirection;
+    private bool dashed = false;
 
 
     public PlayerMovement(BubbleController _controller) : base(_controller) {
@@ -77,8 +80,26 @@ public class PlayerMovement : IState {
         Debug.DrawLine(bubbleController.transform.position, bubbleController.closestPlayer.transform.position, Color.green);
     }
 
+    private Vector3 DirectionOfClosestPlayer() => (bubbleController.closestPlayer.transform.position - bubbleController.transform.position).normalized;
+
+    private float DistanceToClosestPlayer() => Vector3.Distance(bubbleController.transform.position, bubbleController.closestPlayer.transform.position);
+
     public override void Update() {
         ProcessInput();
+
+        
+
+
+        if (bubbleController.Fire.Value >= 1 && !dashed) {
+            if (DistanceToClosestPlayer() <= bubbleController.distanceToDash) {
+                dashed = true;
+                TimerManager.Instance.CreateTimer(bubbleController.abilityCooldown, () => dashed = false);
+
+                Vector3 desiredVelocity = (bubbleController.closestPlayer.transform.position - bubbleController.transform.position) / 0.3f;
+                rb.linearVelocity = desiredVelocity;
+                //rb.AddForce(DirectionOfClosestPlayer() * bubbleController.dashForce, ForceMode.Impulse);
+            }
+        }
 
         //if (Vector3.Distance(bubbleController.transform.position, bubbleController.closestPlayer.transform.position) < bubbleController.distaceToCollide) {
         //    if (rb.linearVelocity.magnitude > bubbleController.closestPlayer.GetComponent<Rigidbody>().linearVelocity.magnitude) {

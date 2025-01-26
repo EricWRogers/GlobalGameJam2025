@@ -22,6 +22,7 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     public InputAxis Sprint = InputAxis.DefaultMomentary;
 
     public InputAxis Aim = InputAxis.DefaultMomentary;
+    public InputAxis Fire = InputAxis.DefaultMomentary;
 
     public float force = 1000f;
     public float maxSpeed = 50f;
@@ -37,6 +38,9 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     public float knockbackMultiplier = 1.2f;
     [HideInInspector]
     public Vector3 lastVelocity;
+    public float distanceToDash = 10f;
+    public float abilityCooldown = 2f;
+    public float dashForce = 10f;
 
 
     void IInputAxisOwner.GetInputAxes(List<IInputAxisOwner.AxisDescriptor> axes) {
@@ -62,6 +66,10 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
             DrivenAxis = () => ref Aim,
             Name = "Aim"
         });
+        axes.Add(new() {
+            DrivenAxis = () => ref Fire,
+            Name = "Fire"
+        });
     }
 
     public override void OnNetworkSpawn() {
@@ -75,6 +83,9 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     }
 
     private void Awake() {
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         if (!IsServer) {
             return; 
