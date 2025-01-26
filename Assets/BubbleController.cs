@@ -65,7 +65,7 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
 
         if (IsLocalPlayer) {
             rig = Instantiate(cameraRig);
-            var cc = GetComponentInChildren<CinemachineCamera>();
+            var cc = rig.GetComponentInChildren<CinemachineCamera>();
             cc.Follow = transform;
         }
     }
