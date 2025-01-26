@@ -3,6 +3,7 @@ using OmnicatLabs.Input;
 using Unity.Cinemachine;
 using System.Collections.Generic;
 using UnityEngine.Timeline;
+using System.Linq;
 
 public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAxisOwner {
     public override IState[] States => new IState[] { new PlayerIdle(this), new PlayerMovement(this), };
@@ -21,6 +22,8 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
 
     public float force = 1000f;
     public float maxSpeed = 50f;
+    private List<GameObject> players = new List<GameObject>();
+    private GameObject closestPlayer;
 
 
     void IInputAxisOwner.GetInputAxes(List<IInputAxisOwner.AxisDescriptor> axes) {
@@ -47,7 +50,9 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     protected override void Start() {
         base.Start();
 
-
+        players = GameObject.FindGameObjectsWithTag("Player").ToList();
+        players.Remove(gameObject);
+        Debug.Log(players.DebugFormat());
     }
 
     public override void Update() {
@@ -59,6 +64,35 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
 
         if (transform.position.y <= GameRules.Instance.killLevel) {
             GameRules.Instance.KillPlayer(this);
+        }
+
+        TrackPkayers();
+        Debug.Log(closestPlayer.name);
+    }
+
+    private void TrackPkayers() {
+        float shortestDistance = float.MaxValue;
+        foreach (var player in players)
+        {
+            Vector3 directionToPlayer = player.transform.position - transform.position;
+            float distanceToPlayer = directionToPlayer.magnitude;
+
+            if (Physics.Linecast(transform.position, player.transform.position)) {
+                if (distanceToPlayer < shortestDistance) {
+                    shortestDistance = distanceToPlayer;
+                    closestPlayer = player;
+                }
+            }
+
+            //if (Physics.Linecast(transform.position, player.transform.position, out RaycastHit hit)) {
+            //    if (hit.collider.CompareTag("Player")) {
+            //        if (Vector3.Distance(transform.position, hit.transform.position) < shortestDistance) {
+                        
+            //            closestPlayer = player;
+            //            Debug.Log("Updated closest");
+            //        }
+            //    }
+            //}
         }
     }
 
