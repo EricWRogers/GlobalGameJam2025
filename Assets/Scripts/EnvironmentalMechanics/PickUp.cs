@@ -20,7 +20,7 @@ public class PickUp : NetworkBehaviour
 
         if (col.CompareTag("Player")) 
         {
-            ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId; //Get the client who did the deed.
+            ulong clientId = col.GetComponentInParent<NetworkObject>().OwnerClientId; //Get the client who did the deed.
             
             HandlePickup(clientId);
         }

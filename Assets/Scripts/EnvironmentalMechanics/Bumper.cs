@@ -12,7 +12,7 @@ public class Bumper : NetworkBehaviour
 
         if (col.gameObject.CompareTag("Player"))
         {
-            ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId;
+            ulong clientId = col.GetComponentInParent<NetworkObject>().OwnerClientId;
 
             bool isLocal = true;
 
@@ -29,7 +29,7 @@ public class Bumper : NetworkBehaviour
                 GameObject player = col.gameObject;
                 anim.SetBool("didHit", true);
 
-                Rigidbody rb = player.GetComponent<Rigidbody>();
+                Rigidbody rb = player.GetComponentInParent<Rigidbody>();
                 float mag = rb.linearVelocity.magnitude;
                 Vector3 dir = (col.transform.position - transform.position).normalized;
                 rb.AddForce(dir * (bounceFactor + mag), ForceMode.Impulse);
@@ -39,7 +39,7 @@ public class Bumper : NetworkBehaviour
 
     public void HandleBounce(ulong clientId, Collider col) //Probably a good workflow tbh.
     {
-        ulong playerNetworkObjectRef = col.GetComponent<NetworkObject>().NetworkObjectId;
+        ulong playerNetworkObjectRef = col.GetComponentInParent<NetworkObject>().NetworkObjectId;
         BounceHandlerClientRPC(clientId, playerNetworkObjectRef); //Cant send complicated types unless you tell it how to serialize. It's a pain.
         BounceHandlerServerRPC(clientId, playerNetworkObjectRef);
     }
@@ -72,7 +72,7 @@ public class Bumper : NetworkBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId;
+            ulong clientId = col.GetComponentInParent<NetworkObject>().OwnerClientId;
 
             bool isLocal = true;
 
@@ -83,7 +83,7 @@ public class Bumper : NetworkBehaviour
             {
                 anim.SetBool("didHit", false);
 
-                ulong playerNetworkObjectRef = col.GetComponent<NetworkObject>().NetworkObjectId;
+                ulong playerNetworkObjectRef = col.GetComponentInParent<NetworkObject>().NetworkObjectId;
                 BounceResetClientRPC(clientId, playerNetworkObjectRef);
             }
         }
