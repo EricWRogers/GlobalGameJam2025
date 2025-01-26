@@ -140,7 +140,7 @@ MonoBehaviour:
       Time: 0
     Restrictions: 6
   force: 1000
-  maxSpeed: 50
+  maxSpeed: 20
   closestPlayer: {fileID: 0}
   trackingForce: 10
   trackingRange: 5
