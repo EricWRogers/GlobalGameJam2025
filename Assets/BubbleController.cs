@@ -69,13 +69,13 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
             isLocal = NetworkManager.Singleton.LocalClientId == clientId;
 
 
-        if (isLocal) {
+        
             var id = GetComponent<NetworkObject>().OwnerClientId;
             NetworkManager.Singleton.ConnectedClients.TryGetValue(id, out var client);
             
             rig = Instantiate(cameraRig);
             rig.GetComponentInChildren<CinemachineCamera>().Follow = client.PlayerObject.transform;
-        }
+        
     }
 
     protected override void Start() {
