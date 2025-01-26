@@ -6,6 +6,7 @@ public class PickUp : NetworkBehaviour
     public ParticleSystem bubbles;
     public GameObject bottle;
     public float rotateSpeed = 45f;
+    public AudioSource audio;
 
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class PickUp : NetworkBehaviour
 
         if (col.CompareTag("Player")) 
         {
+            audio.Play(); 
             ulong clientId = col.GetComponentInParent<NetworkObject>().OwnerClientId; //Get the client who did the deed.
             
             HandlePickup(clientId);

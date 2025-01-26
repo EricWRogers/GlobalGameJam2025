@@ -6,6 +6,7 @@ public class JumpPad : NetworkBehaviour
     public Animator anim;
     public GameObject direction;
     public float springForce = 10f;
+    public AudioSource audio;
     
     public void OnTriggerEnter(Collider col)
     {
@@ -26,6 +27,7 @@ public class JumpPad : NetworkBehaviour
 
                 // local
                 anim.SetBool("didHit", true);
+                audio.Play(); 
                 col.GetComponentInParent<Rigidbody>().AddForce(direction.transform.forward * (col.GetComponentInParent<Rigidbody>().linearVelocity.magnitude + springForce), ForceMode.Impulse);
             }
             
