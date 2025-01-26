@@ -14,7 +14,9 @@ public class GameRules : MonoBehaviour
     public float killLevel = -10f;
 
     private Dictionary<BubbleController, int> stockDictionary = new Dictionary<BubbleController, int>();
-    private GameObject[] spawns;
+
+    public GameObject playerPrefab;
+    public List<Transform> spawnPoints = new List<Transform>();
 
     public static GameRules Instance {
         get; private set; 
@@ -26,18 +28,26 @@ public class GameRules : MonoBehaviour
         } else {
             Destroy(this);
         }
+    }
 
-        spawns = GameObject.FindGameObjectsWithTag("SpawnPoint");
+    private void OnEnable()
+    {
+        NetworkManager.Singleton.OnClientConnectedCallback += SpawnPlayer;
     }
 
     private void Start() {
+        SpawnPlayersForAllClients();
+
+
         TimerManager.Instance.CreateTimer(matchTime, EndMatch, out matchTimeRemaining);
 
         foreach (var kvp in NetworkManager.Singleton.ConnectedClients) {
             stockDictionary.Add(kvp.Value.PlayerObject.GetComponent<BubbleController>(), stocks);
         }
 
-        //TODO spawn the players at spawn points
+       
+
+
     }
 
     public void KillPlayer(BubbleController player) {
@@ -52,7 +62,7 @@ public class GameRules : MonoBehaviour
             EndMatch();
         }
 
-        player.transform.position = spawns[Random.Range(0, spawns.Length)].transform.position;
+        player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
     }
 
     private void EndMatch() {
@@ -72,5 +82,34 @@ public class GameRules : MonoBehaviour
 
     public void ShowWinner() {
         Debug.Log($"Winner: {stockDictionary.OrderByDescending(kvp => kvp.Value).First().Key}");
+    }
+
+    private void SpawnPlayersForAllClients()
+    {
+        foreach (var client in NetworkManager.Singleton.ConnectedClients)
+        {
+            SpawnPlayer(client.Key);
+        }
+    }
+
+    private void SpawnPlayer(ulong clientId)
+    {
+
+        if (NetworkManager.Singleton.IsServer)
+        {
+            GameObject playerInstance = Instantiate(playerPrefab, GetSpawnPoint().position, GetSpawnPoint().rotation);
+
+
+            NetworkObject playerNetworkObject = playerInstance.GetComponent<NetworkObject>();
+            playerNetworkObject.SpawnAsPlayerObject(clientId);
+        }
+    }
+    private Transform GetSpawnPoint()
+    {
+        int random = Random.Range(0, spawnPoints.Count);
+        Transform spawnPoint = spawnPoints[random];
+        spawnPoints.Remove(spawnPoints[random]);
+
+        return spawnPoint;
     }
 }

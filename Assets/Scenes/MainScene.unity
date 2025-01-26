@@ -3090,39 +3090,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1983083589}
-  - component: {fileID: 1983083588}
   - component: {fileID: 1983083590}
   m_Layer: 0
-  m_Name: ManagerThing
+  m_Name: Gamemanager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1983083588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983083587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d94bda54b0ab8c42ba39327d1418b02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 1501043408524294247, guid: 942d2d62e300d1e469b44eabe7d09ad1, type: 3}
-  spawnPoint: {fileID: 1379051580}
-  spawnPoints:
-  - {fileID: 1379051580}
-  - {fileID: 1923539908}
-  - {fileID: 1482198915}
-  - {fileID: 1894522955}
-  - {fileID: 136257954}
-  - {fileID: 1359965034}
-  - {fileID: 402128233}
-  - {fileID: 1544848372}
-  - {fileID: 1837537777}
 --- !u!4 &1983083589
 Transform:
   m_ObjectHideFlags: 0
@@ -3169,6 +3144,17 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   killLevel: -10
+  playerPrefab: {fileID: 1501043408524294247, guid: 942d2d62e300d1e469b44eabe7d09ad1, type: 3}
+  spawnPoints:
+  - {fileID: 1379051580}
+  - {fileID: 1923539908}
+  - {fileID: 1482198915}
+  - {fileID: 1894522955}
+  - {fileID: 136257954}
+  - {fileID: 1359965034}
+  - {fileID: 402128233}
+  - {fileID: 1544848372}
+  - {fileID: 1837537777}
 --- !u!1001 &2073155538
 PrefabInstance:
   m_ObjectHideFlags: 0
