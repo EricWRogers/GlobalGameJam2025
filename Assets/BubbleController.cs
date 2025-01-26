@@ -41,6 +41,8 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     public float distanceToDash = 10f;
     public float abilityCooldown = 2f;
     public float dashForce = 10f;
+    [HideInInspector]
+    public AbilityButtonControl btnCtrl;
 
 
     void IInputAxisOwner.GetInputAxes(List<IInputAxisOwner.AxisDescriptor> axes) {
@@ -106,6 +108,7 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
 
         players = GameObject.FindGameObjectsWithTag("Player").ToList();
         players.Remove(gameObject);
+        btnCtrl = GetComponentInChildren<AbilityButtonControl>();
     }
 
     public override void Update() {
@@ -130,7 +133,8 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
         if (transform.position.y <= GameRules.Instance.killLevel) {
 
             var id = GetComponent<NetworkObject>().OwnerClientId;
-            
+
+            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
             GameRules.Instance.KillPlayerServerRPC(id);
         }
 
