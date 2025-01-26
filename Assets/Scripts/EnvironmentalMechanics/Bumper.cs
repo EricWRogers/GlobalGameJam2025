@@ -5,6 +5,7 @@ public class Bumper : NetworkBehaviour
 {
     public Animator anim;
     public float bounceFactor = 5f;
+    public float minMagnitude = 10f;
 
     public void OnTriggerEnter(Collider col)
     {
@@ -32,7 +33,12 @@ public class Bumper : NetworkBehaviour
                 Rigidbody rb = player.GetComponentInParent<Rigidbody>();
                 float mag = rb.linearVelocity.magnitude;
                 Vector3 dir = (col.transform.position - transform.position).normalized;
-                rb.AddForce(dir * (bounceFactor + mag), ForceMode.Impulse);
+                Vector3 force = dir * (bounceFactor + mag);
+                if(force.magnitude < minMagnitude)
+                {
+                    force = force.normalized * minMagnitude;
+                }
+                rb.AddForce(force, ForceMode.Impulse);
             }
         }
     }
