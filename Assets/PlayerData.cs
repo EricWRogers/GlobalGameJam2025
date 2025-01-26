@@ -46,7 +46,7 @@ public class PlayerData : MonoBehaviour
         {
             if (lives.Count != stocks)
             {
-                Destroy(livesContainer.transform.GetChild(lives.Count).gameObject);
+                Destroy(livesContainer.transform.GetChild(lives.Count -1).gameObject);
                 lives.RemoveAt(lives.Count - 1);
                 
             }
