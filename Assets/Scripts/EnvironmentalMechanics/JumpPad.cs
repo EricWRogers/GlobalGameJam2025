@@ -11,7 +11,7 @@ public class JumpPad : NetworkBehaviour
     {
         if(col.gameObject.CompareTag("Player"))
         {
-            ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId;
+            ulong clientId = col.GetComponentInParent<NetworkObject>().OwnerClientId;
 
             bool isLocal = true;
 
@@ -26,7 +26,7 @@ public class JumpPad : NetworkBehaviour
 
                 // local
                 anim.SetBool("didHit", true);
-                col.GetComponent<Rigidbody>().AddForce(direction.transform.forward * (col.GetComponent<Rigidbody>().linearVelocity.magnitude + springForce), ForceMode.Impulse);
+                col.GetComponentInParent<Rigidbody>().AddForce(direction.transform.forward * (col.GetComponentInParent<Rigidbody>().linearVelocity.magnitude + springForce), ForceMode.Impulse);
             }
             
         }
@@ -34,7 +34,7 @@ public class JumpPad : NetworkBehaviour
 
     public void HandleJump(ulong clientId, Collider col) //Probably a good workflow tbh.
     {
-        ulong playerNetworkObjectRef = col.GetComponent<NetworkObject>().NetworkObjectId;
+        ulong playerNetworkObjectRef = col.GetComponentInParent<NetworkObject>().NetworkObjectId;
         JumpHandlerClientRPC(clientId, playerNetworkObjectRef); //Cant send complicated types unless you tell it how to serialize. It's a pain.
     }
 
@@ -60,7 +60,7 @@ public class JumpPad : NetworkBehaviour
     {
         if(col.gameObject.CompareTag("Player"))
         {
-           ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId;
+           ulong clientId = col.GetComponentInParent<NetworkObject>().OwnerClientId;
 
             bool isLocal = true;
 
@@ -71,7 +71,7 @@ public class JumpPad : NetworkBehaviour
             {
                 anim.SetBool("didHit", false);
 
-                ulong playerNetworkObjectRef = col.GetComponent<NetworkObject>().NetworkObjectId;
+                ulong playerNetworkObjectRef = col.GetComponentInParent<NetworkObject>().NetworkObjectId;
                 JumpResetClientRPC(clientId, playerNetworkObjectRef);
             }
         }

@@ -10,7 +10,7 @@ public class SpeedUp : NetworkBehaviour
     {
         if(col.gameObject.CompareTag("Player"))
         {
-            ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId;
+            ulong clientId = col.GetComponentInParent<NetworkObject>().OwnerClientId;
 
             bool isLocal = true;
 
@@ -22,14 +22,14 @@ public class SpeedUp : NetworkBehaviour
             {
                 // server
                 HandleSpeed(clientId, col);    
-                col.GetComponent<Rigidbody>().AddForce(direction.transform.forward * (col.GetComponent<Rigidbody>().linearVelocity.magnitude + speedingTicket), ForceMode.Impulse);
+                col.GetComponentInParent<Rigidbody>().AddForce(direction.transform.forward * (col.GetComponentInParent<Rigidbody>().linearVelocity.magnitude + speedingTicket), ForceMode.Impulse);
             }
         }
     }
 
     public void HandleSpeed(ulong clientId, Collider col) //Probably a good workflow tbh.
     {
-        ulong playerNetworkObjectRef = col.GetComponent<NetworkObject>().NetworkObjectId;
+        ulong playerNetworkObjectRef = col.GetComponentInParent<NetworkObject>().NetworkObjectId;
         SpeedHandlerClientRPC(clientId, playerNetworkObjectRef); //Cant send complicated types unless you tell it how to serialize. It's a pain.
     }
 
@@ -56,7 +56,7 @@ public class SpeedUp : NetworkBehaviour
     {
         if(col.gameObject.CompareTag("Player"))
         {
-            ulong clientId = col.GetComponent<NetworkObject>().OwnerClientId;
+            ulong clientId = col.GetComponentInParent<NetworkObject>().OwnerClientId;
 
             bool isLocal = true;
 
@@ -65,7 +65,7 @@ public class SpeedUp : NetworkBehaviour
             
             if (isLocal)
             {
-                ulong playerNetworkObjectRef = col.GetComponent<NetworkObject>().NetworkObjectId;
+                ulong playerNetworkObjectRef = col.GetComponentInParent<NetworkObject>().NetworkObjectId;
                 SpeedResetClientRPC(clientId, playerNetworkObjectRef);
             }
         }
