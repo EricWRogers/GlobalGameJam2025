@@ -61,6 +61,11 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     }
 
     private void Awake() {
+
+        if (!IsServer) {
+            return; 
+        }
+
         ulong clientId = transform.GetComponent<NetworkObject>().OwnerClientId;
 
         bool isLocal = true;
