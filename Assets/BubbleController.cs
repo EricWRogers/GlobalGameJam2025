@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.Timeline;
 using System.Linq;
 using Unity.Netcode;
+using UnityEngine.UI;
 
 public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAxisOwner {
     public override IState[] States => new IState[] { new PlayerIdle(this), new PlayerMovement(this), };
@@ -144,11 +145,11 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     }
 
     public void ShowReticle() {
-        reticleController.gameObject.SetActive(true);
+        reticleController.GetComponent<Image>().enabled = true;
     }
 
     public void HideReticle() {
-        reticleController.gameObject.SetActive(false);
+        reticleController.GetComponent<Image>().enabled = false;
     }
 
     private void TrackPkayers() {
