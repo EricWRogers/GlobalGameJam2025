@@ -13,7 +13,7 @@ public class GameRules : NetworkBehaviour
 
     [HideInInspector]
     public Timer matchTimeRemaining;
-    public float killLevel = 16f;
+    public float killLevel = 30f;
 
     private Dictionary<BubbleController, int> stockDictionary = new Dictionary<BubbleController, int>();
 

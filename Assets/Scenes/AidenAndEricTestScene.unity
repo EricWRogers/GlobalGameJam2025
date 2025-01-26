@@ -3682,7 +3682,7 @@ MonoBehaviour:
     onTickCallback:
       m_PersistentCalls:
         m_Calls: []
-  killLevel: -10
+  killLevel: 30
   playerPrefab: {fileID: 1501043408524294247, guid: 942d2d62e300d1e469b44eabe7d09ad1, type: 3}
   spawnPoints:
   - {fileID: 2002709904}
