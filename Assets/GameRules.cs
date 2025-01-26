@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.InputSystem.Controls;
 using Unity.Netcode;
+using TMPro;
 
-public class GameRules : MonoBehaviour
+public class GameRules : NetworkBehaviour
 {
     public int stocks = 3;
-    public float matchTime = 180f;
+   
     [HideInInspector]
     public Timer matchTimeRemaining;
     public float killLevel = -10f;
@@ -17,6 +18,12 @@ public class GameRules : MonoBehaviour
 
     public GameObject playerPrefab;
     public List<Transform> spawnPoints = new List<Transform>();
+
+    public float prepDuration = 5f;
+    public float matchTime = 180f;
+    public TMP_Text timerText;
+
+    private NetworkVariable<float> remainingTime = new NetworkVariable<float>(0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     public static GameRules Instance {
         get; private set; 
@@ -38,16 +45,39 @@ public class GameRules : MonoBehaviour
     private void Start() {
         SpawnPlayersForAllClients();
 
+        if (IsServer) //Server must handle it.
+        {
+            remainingTime.Value = prepDuration; //We should lock ALL movement player and server untill this ends.
+        }
 
         TimerManager.Instance.CreateTimer(matchTime, EndMatch, out matchTimeRemaining);
 
         foreach (var kvp in NetworkManager.Singleton.ConnectedClients) {
             stockDictionary.Add(kvp.Value.PlayerObject.GetComponent<BubbleController>(), stocks);
         }
+    }
 
-       
+    private void Update()
+    {
+        if (IsServer && remainingTime.Value > 0)
+        {
+            remainingTime.Value -= Time.deltaTime;
+        }
+        else if(IsServer && remainingTime.Value <= 0) //REenable movement somewhere here. If we hit this then we've elapsed prep time.
+        {
+            remainingTime.Value = matchTime;
+        }
+        
+
+        UpdateTimerText(remainingTime.Value); //Everyone calls this. Convenient due to network var. It auto syncs so who cares.
+    }
 
 
+    private void UpdateTimerText(float time)
+    {
+        int minutes = Mathf.FloorToInt(time / 60f);
+        int seconds = Mathf.FloorToInt(time % 60f);
+        timerText.text = $"{minutes:00}:{seconds:00}";
     }
 
     public void KillPlayer(BubbleController player) {
