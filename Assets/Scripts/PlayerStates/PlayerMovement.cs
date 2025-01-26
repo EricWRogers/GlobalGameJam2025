@@ -94,7 +94,7 @@ public class PlayerMovement : IState {
             bubbleController.ShowReticle();
             if (bubbleController.Fire.Value >= 1 && !dashed) {
                 dashed = true;
-                TimerManager.Instance.CreateTimer(bubbleController.abilityCooldown, () => dashed = false, out Timer timer);
+                TimerManager.Instance.CreateTimer(bubbleController.abilityCooldown, () => { dashed = false; bubbleController.btnCtrl.EndCooldown(); }, out Timer timer);
                 bubbleController.btnCtrl.StartCoolDown(timer);
                 Vector3 desiredVelocity = (bubbleController.closestPlayer.transform.position - bubbleController.transform.position) / 0.3f;
                 rb.linearVelocity = desiredVelocity;
