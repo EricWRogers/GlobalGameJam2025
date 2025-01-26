@@ -41,6 +41,7 @@ public class Bumper : NetworkBehaviour
     {
         ulong playerNetworkObjectRef = col.GetComponent<NetworkObject>().NetworkObjectId;
         BounceHandlerClientRPC(clientId, playerNetworkObjectRef); //Cant send complicated types unless you tell it how to serialize. It's a pain.
+        BounceHandlerServerRPC(clientId, playerNetworkObjectRef);
     }
 
     [ClientRpc]
@@ -55,10 +56,16 @@ public class Bumper : NetworkBehaviour
         }
     }
 
-    [ServerRpc]
-    public void BounceHandlerServerRPC()
+    [ServerRpc(RequireOwnership = false)]
+    public void BounceHandlerServerRPC(ulong clientId, ulong reference)
     {
-
+        if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(reference, out var playerNetworkObject))
+        {
+            if (NetworkManager.Singleton.LocalClientId != clientId)
+            {
+                anim.SetBool("didHit", true);
+            }
+        }
     }
 
     public void OnTriggerExit(Collider col)
@@ -84,6 +91,18 @@ public class Bumper : NetworkBehaviour
 
     [ClientRpc]
     public void BounceResetClientRPC(ulong clientId, ulong reference)
+    {
+        if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(reference, out var playerNetworkObject))
+        {
+            if (NetworkManager.Singleton.LocalClientId != clientId)
+            {
+                anim.SetBool("didHit", false);
+            }
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void BounceResetServerRPC(ulong clientId, ulong reference)
     {
         if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(reference, out var playerNetworkObject))
         {
