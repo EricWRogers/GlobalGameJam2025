@@ -211,7 +211,7 @@ MonoBehaviour:
   anim: {fileID: 7125119923684195682}
   bounceFactor: 10
   minMagnitude: 10
-  audio: {fileID: 0}
+  audio: {fileID: 3089149778833203440}
 --- !u!114 &7260233565693772898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +267,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 45993d181b053a945845b6f0a5864028, type: 3}
   m_Resource: {fileID: 8300000, guid: 45993d181b053a945845b6f0a5864028, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 0.85
   m_Pitch: 1
   Loop: 0
   Mute: 0
