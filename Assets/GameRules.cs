@@ -183,11 +183,20 @@ public class GameRules : NetworkBehaviour
 
     private void EndMatch()
     {
+        RemoveClientRPC();
+        if (NetworkManager.Singleton.IsHost)
+        {
+            SceneManager.LoadScene("LobbyScene");
+
+            //NetworkManager.Singleton.Shutdown();
+
+        }
+        /*
         var winner = stockDictionary.OrderByDescending(kvp => kvp.Value).First();
         ShowWinner();
         stockDictionary.Remove(winner.Key);
         ShowLosers();
-
+        */
     }
 
     public void ShowLosers()
