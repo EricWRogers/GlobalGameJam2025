@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using Unity.Netcode;
 using Unity.Services.Lobbies.Models;
+using Unity.Services.Matchmaker.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -178,7 +179,11 @@ public class GameRules : NetworkBehaviour
     private void UpdateClientStockClientRPC(ulong id)
     {
         NetworkManager.Singleton.ConnectedClients.TryGetValue(id, out var client);
+
+        BubbleController player = client.PlayerObject.GetComponent<BubbleController>();
+        player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
         client.PlayerObject.GetComponent<PlayerData>().stocks--;
+        
     }
 
     private void EndMatch()
