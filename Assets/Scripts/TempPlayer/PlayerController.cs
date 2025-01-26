@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody rb;
+    public Transform cameraController;
 
     public float moveSpeed = 10f;
 
@@ -26,6 +27,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.AddForce(new Vector3(xInput, 0, zInput) * moveSpeed);
+
+        var moveDirection = cameraController.forward * zInput + cameraController.right * xInput;
+        rb.AddForce(moveDirection * moveSpeed);
+
     }
 }
