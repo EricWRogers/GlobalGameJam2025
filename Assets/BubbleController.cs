@@ -32,6 +32,7 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     public float trackingRange = 5f;
     public float minClosenessToTrack = 1f;
     public GameObject cameraRig;
+    private GameObject rig;
 
 
     void IInputAxisOwner.GetInputAxes(List<IInputAxisOwner.AxisDescriptor> axes) {
@@ -69,7 +70,7 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
 
 
         if (isLocal) {
-            var rig = Instantiate(cameraRig);
+            rig = Instantiate(cameraRig);
             rig.GetComponentInChildren<CinemachineCamera>().Follow = transform;
         }
     }
@@ -93,7 +94,6 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
 
 
         if (isLocal) {
-            var rig = Instantiate(cameraRig);
             rig.GetComponentInChildren<CinemachineCamera>().Follow = transform;
         }
 
