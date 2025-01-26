@@ -202,7 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   anim: {fileID: 7125119923684195682}
-  bounceFactor: 5
+  bounceFactor: 10
+  minMagnitude: 10
 --- !u!114 &7260233565693772898
 MonoBehaviour:
   m_ObjectHideFlags: 0

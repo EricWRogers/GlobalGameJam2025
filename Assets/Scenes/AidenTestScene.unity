@@ -8363,6 +8363,10 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 3609911697
       objectReference: {fileID: 0}
+    - target: {fileID: 397646382096870220, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
+      propertyPath: speedingTicket
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 408283757028847092, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 1010440790
@@ -8387,6 +8391,10 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 2436890402
       objectReference: {fileID: 0}
+    - target: {fileID: 2274596578382338703, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
+      propertyPath: speedingTicket
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2328427033706672533, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 334108562
@@ -8410,6 +8418,10 @@ PrefabInstance:
     - target: {fileID: 3466015167436876251, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 747358349
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653025110420407971, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
+      propertyPath: speedingTicket
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3693061871887349817, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -8438,6 +8450,10 @@ PrefabInstance:
     - target: {fileID: 4976242896840805723, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 1948782668
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162477680737772067, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
+      propertyPath: speedingTicket
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5578343431980160300, guid: b4905aba6b823b245b262a070f7b8743, type: 3}
       propertyPath: GlobalObjectIdHash
