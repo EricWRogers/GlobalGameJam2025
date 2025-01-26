@@ -13,6 +13,12 @@ public class Collision : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("MapMechanic")) {
+            Debug.Log("Entering");
+            GetComponent<BubbleController>().lastVelocity = Vector3.zero;  
+        }
+
+
         if (other.CompareTag("Player")) {
             Debug.Log("Player Found");
             var otherRb = other.GetComponentInParent<Rigidbody>();
@@ -29,6 +35,13 @@ public class Collision : MonoBehaviour
                     rb.linearVelocity = knockbackDirection * otherVelocity * knockbackMultiplier;
                 }
             }
+        }
+    }
+
+    private void OnTriggerStay(Collider other) {
+        if (other.CompareTag("MapMechanic")) {
+            Debug.Log("Staying");
+            GetComponent<BubbleController>().lastVelocity = Vector3.zero;
         }
     }
 }
