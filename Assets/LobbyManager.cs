@@ -31,8 +31,14 @@ public class LobbyManager : MonoBehaviour
 
     private void AddPlayerToLobby(ulong clientId)
     {
-        ServerHandleLobbyUIServerRPC();
+       
+      ServerHandleLobbyUIServerRPC();
+        
+        
+
+
         int colorIndex = 0;
+        
         foreach (var client in NetworkManager.Singleton.ConnectedClients)
         {
             if (!playerUIInstances.ContainsKey(client.Key))
@@ -97,7 +103,6 @@ public class LobbyManager : MonoBehaviour
             }
         }
     }
-
 
 }
 

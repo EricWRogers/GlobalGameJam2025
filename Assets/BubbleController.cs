@@ -33,6 +33,10 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     public float minClosenessToTrack = 1f;
     public GameObject cameraRig;
     private GameObject rig;
+    public float distaceToCollide = 0.2f;
+    public float knockbackMultiplier = 1.2f;
+    [HideInInspector]
+    public Vector3 lastVelocity;
 
 
     void IInputAxisOwner.GetInputAxes(List<IInputAxisOwner.AxisDescriptor> axes) {

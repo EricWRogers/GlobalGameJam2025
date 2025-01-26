@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerData : NetworkBehaviour
+public class PlayerData : MonoBehaviour 
 {
     public List<GameObject> lives = new List<GameObject>();
     public List<GameObject> stockIconList = new List<GameObject>();
@@ -45,7 +46,9 @@ public class PlayerData : NetworkBehaviour
         {
             if (lives.Count != stocks)
             {
+                Destroy(livesContainer.transform.GetChild(lives.Count).gameObject);
                 lives.RemoveAt(lives.Count - 1);
+                
             }
         }
     }
