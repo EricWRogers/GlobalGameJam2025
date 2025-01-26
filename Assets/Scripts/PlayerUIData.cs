@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-public class PlayerData : MonoBehaviour
+public class PlayerUIData : MonoBehaviour
 {
     public TMP_Text playerNumber;
     public Image backgroundImg;
