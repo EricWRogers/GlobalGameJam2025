@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  snapToCenter: 1
   speedingTicket: 30
   direction: {fileID: 2844326447285444268}
   audio: {fileID: 9223357604065881209}
