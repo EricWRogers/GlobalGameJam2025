@@ -4,6 +4,7 @@ using UnityEngine;
 public class JumpPad : NetworkBehaviour
 {
     public Animator anim;
+    public GameObject direction;
     public float springForce = 10f;
     
     public void OnTriggerEnter(Collider col)
@@ -25,7 +26,7 @@ public class JumpPad : NetworkBehaviour
 
                 // local
                 anim.SetBool("didHit", true);
-                col.GetComponent<Rigidbody>().AddForce(transform.forward * (col.GetComponent<Rigidbody>().linearVelocity.magnitude + springForce), ForceMode.Impulse);
+                col.GetComponent<Rigidbody>().AddForce(direction.transform.forward * (col.GetComponent<Rigidbody>().linearVelocity.magnitude + springForce), ForceMode.Impulse);
             }
             
         }
