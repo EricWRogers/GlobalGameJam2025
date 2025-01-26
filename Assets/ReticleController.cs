@@ -2,12 +2,19 @@ using UnityEngine;
 
 public class ReticleController : MonoBehaviour
 {
+    public float offsetDistance = 1.5f;
+    private BubbleController player;
+    private void Start() {
+        player = GetComponentInParent<BubbleController>();
+    }
+
     private void Update() {
+
+        Vector3 directionToCamera = (Camera.main.transform.position - player.transform.position).normalized;
+        transform.position = player.transform.position + directionToCamera * offsetDistance;
+
         transform.LookAt(Camera.main.transform);
 
-        // To make it perfectly flat, you can also rotate it around the X-axis to avoid flipping:
-        Vector3 eulerRotation = transform.eulerAngles;
-        eulerRotation.x = 0; // Keep the image upright
-        transform.eulerAngles = eulerRotation;
+        transform.Rotate(0, 180, 0);
     }
 }
