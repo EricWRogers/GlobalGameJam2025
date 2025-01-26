@@ -43,9 +43,9 @@ public class PlayerMovement : IState {
     public override void FixedUpdate() {
 
 
-        if (rb.linearVelocity.magnitude < bubbleController.lastVelocity.magnitude) {
-            rb.linearVelocity = rb.linearVelocity.normalized * rb.linearVelocity.magnitude;
-        }
+        //if (rb.linearVelocity.magnitude < bubbleController.lastVelocity.magnitude) {
+        //    rb.linearVelocity = rb.linearVelocity.normalized * rb.linearVelocity.magnitude;
+        //}
 
         rb.AddForce(moveDirection * Time.deltaTime * bubbleController.force);
 
