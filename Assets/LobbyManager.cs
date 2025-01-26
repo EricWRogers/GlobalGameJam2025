@@ -68,7 +68,7 @@ public class LobbyManager : MonoBehaviour
     {
         if (NetworkManager.Singleton.IsHost)
         {
-            NetworkManager.Singleton.SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
+            NetworkManager.Singleton.SceneManager.LoadScene("AidenAndEricTestScene", LoadSceneMode.Single);
         }
         else
         {
