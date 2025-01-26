@@ -6,6 +6,7 @@ public class Bumper : NetworkBehaviour
     public Animator anim;
     public float bounceFactor = 5f;
     public float minMagnitude = 10f;
+    public AudioSource audio;
 
     public void OnTriggerEnter(Collider col)
     {
@@ -29,6 +30,7 @@ public class Bumper : NetworkBehaviour
                 // local
                 GameObject player = col.gameObject;
                 anim.SetBool("didHit", true);
+                audio.Play(); 
 
                 Rigidbody rb = player.GetComponentInParent<Rigidbody>();
                 float mag = rb.linearVelocity.magnitude;

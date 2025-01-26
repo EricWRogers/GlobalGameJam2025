@@ -5,6 +5,7 @@ public class SpeedUp : NetworkBehaviour
 {
     public float speedingTicket = 20f;
     public GameObject direction;
+    public AudioSource audio;
 
     void OnTriggerEnter(Collider col)
     {
@@ -21,7 +22,8 @@ public class SpeedUp : NetworkBehaviour
             if (isLocal)
             {
                 // server
-                HandleSpeed(clientId, col);    
+                HandleSpeed(clientId, col);
+                audio.Play();    
                 col.GetComponentInParent<Rigidbody>().AddForce(direction.transform.forward * (col.GetComponentInParent<Rigidbody>().linearVelocity.magnitude + speedingTicket), ForceMode.Impulse);
             }
         }
