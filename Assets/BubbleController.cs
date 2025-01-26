@@ -84,6 +84,19 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     public override void Update() {
         base.Update();
 
+        ulong clientId = transform.GetComponent<NetworkObject>().OwnerClientId;
+
+        bool isLocal = true;
+
+        if (NetworkManager.Singleton)
+            isLocal = NetworkManager.Singleton.LocalClientId == clientId;
+
+
+        if (isLocal) {
+            var rig = Instantiate(cameraRig);
+            rig.GetComponentInChildren<CinemachineCamera>().Follow = transform;
+        }
+
         if (IsMoving() && currentState is not PlayerMovement) {
             ChangeState<PlayerMovement>();
         }
