@@ -115,7 +115,10 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
         }
 
         if (transform.position.y <= GameRules.Instance.killLevel) {
-            GameRules.Instance.KillPlayer(this);
+
+            var id = GetComponent<NetworkObject>().OwnerClientId;
+            
+            GameRules.Instance.KillPlayerServerRPC(id);
         }
 
         TrackPkayers();
