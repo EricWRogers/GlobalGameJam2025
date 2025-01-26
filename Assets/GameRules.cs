@@ -44,7 +44,7 @@ public class GameRules : NetworkBehaviour
         {
             Destroy(this);
         }
-        spawns = GameObject.FindGameObjectsWithTag("SpawnPoint");
+        
     }
 
     private void Start()
