@@ -112,6 +112,24 @@ public class GameRules : NetworkBehaviour
                 {
                     EndMatch();
                 }
+                else
+                {
+                    int playersWithStocks = 0;
+
+                    foreach (var client in NetworkManager.Singleton.ConnectedClients.Values)
+                    {
+                        var playerData = client.PlayerObject.GetComponent<PlayerData>();
+                        if (playerData != null && playerData.stocks > 0)
+                        {
+                            playersWithStocks++;
+                        }
+                    }
+
+                    if (playersWithStocks == 1)
+                    {
+                        EndMatch();
+                    }
+                }
             }
 
 
