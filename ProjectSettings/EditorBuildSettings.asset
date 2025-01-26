@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestWithOutLogan.unity
     guid: 15e44ff58ccb31744b995efccd806ed7
+  - enabled: 1
+    path: Assets/Scenes/AidenAndEricTestScene.unity
+    guid: fec16df1b2cae184f87a0e8a9fa4c413
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
