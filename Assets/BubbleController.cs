@@ -30,6 +30,7 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     public float trackingForce = 50f;
     public float trackingRange = 5f;
     public float minClosenessToTrack = 1f;
+    public GameObject cameraRig;
 
 
     void IInputAxisOwner.GetInputAxes(List<IInputAxisOwner.AxisDescriptor> axes) {
@@ -57,12 +58,16 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
         });
     }
 
+    private void Awake() {
+        var rig = Instantiate(cameraRig);
+        rig.GetComponentInChildren<CinemachineCamera>().Follow = transform;
+    }
+
     protected override void Start() {
         base.Start();
 
         players = GameObject.FindGameObjectsWithTag("Player").ToList();
         players.Remove(gameObject);
-        Debug.Log(players.DebugFormat());
     }
 
     public override void Update() {
