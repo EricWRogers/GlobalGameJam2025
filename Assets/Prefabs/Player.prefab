@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7929218603492691473}
   - component: {fileID: 3298840629588035788}
   - component: {fileID: 2810023941438414442}
-  - component: {fileID: 7215815329799218031}
+  - component: {fileID: 7858264396984162198}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -87,8 +87,22 @@ MonoBehaviour:
       Wait: 0
       Time: 0
     Restrictions: 6
+  Aim:
+    Value: 0
+    Center: 0
+    Range: {x: -1, y: 1}
+    Wrap: 0
+    Recentering:
+      Enabled: 0
+      Wait: 0
+      Time: 0
+    Restrictions: 6
   force: 1000
   maxSpeed: 50
+  closestPlayer: {fileID: 0}
+  trackingForce: 10
+  trackingRange: 5
+  minClosenessToTrack: 0
 --- !u!114 &2810023941438414442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,9 +172,22 @@ MonoBehaviour:
       Driver:
         AccelTime: 0
         DecelTime: 0
+    - Name: Aim
+      Owner: {fileID: 3298840629588035788}
+      Enabled: 1
+      Input:
+        InputAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+        Gain: 1
+        LegacyInput: 
+        LegacyGain: 1
+        CancelDeltaTime: 0
+      InputValue: 0
+      Driver:
+        AccelTime: 0
+        DecelTime: 0
   PlayerIndex: -1
   AutoEnableInputs: 1
---- !u!54 &7215815329799218031
+--- !u!54 &7858264396984162198
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

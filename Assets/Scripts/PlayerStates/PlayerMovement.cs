@@ -16,7 +16,7 @@ public class PlayerMovement : IState {
 
     public PlayerMovement(BubbleController _controller) : base(_controller) {
         bubbleController = _controller;
-        rb = bubbleController.GetComponent<Rigidbody>();
+        rb = bubbleController.GetComponentInChildren<Rigidbody>();
     }
 
     public override void Initialize() {
@@ -42,8 +42,31 @@ public class PlayerMovement : IState {
         if (rb.linearVelocity.magnitude > bubbleController.maxSpeed) {
             rb.linearVelocity = rb.linearVelocity.normalized * bubbleController.maxSpeed;
         }
+
+        if (bubbleController.closestPlayer != null) {
+            SoftTrack();
+        }
     }
-    
+
+    private void SoftTrack() {
+        Vector3 directionToTarget = (bubbleController.closestPlayer.transform.position - bubbleController.transform.position).normalized;
+        float distanceToTarget = Vector3.Distance(bubbleController.transform.position, bubbleController.closestPlayer.transform.position);
+
+        float dotProduct = Vector3.Dot(rb.linearVelocity.normalized, directionToTarget);
+
+        if (dotProduct < bubbleController.minClosenessToTrack)
+        {
+            Debug.DrawLine(bubbleController.transform.position, bubbleController.closestPlayer.transform.position, Color.red); // Debug: Not influenced
+
+            return;
+        }
+
+        float strength = Mathf.Lerp(0, bubbleController.trackingForce, Mathf.Clamp01((bubbleController.trackingRange - distanceToTarget) / bubbleController.trackingRange));
+        Vector3 force = directionToTarget * strength;
+        rb.AddForce(force, ForceMode.Force);
+        Debug.DrawLine(bubbleController.transform.position, bubbleController.closestPlayer.transform.position, Color.green);
+    }
+
     public override void Update() {
         ProcessInput();
     }
@@ -54,6 +77,9 @@ public class PlayerMovement : IState {
         Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
         Vector3 cameraRight = Vector3.Scale(Camera.main.transform.right, new Vector3(1, 0, 1)).normalized;
 
+        if (bubbleController.Aim.Value >= 1) {
+            Debug.Log("Aiming");
+        }
 
         moveDirection = cameraForward * bubbleController.MoveZ.Value + cameraRight * bubbleController.MoveX.Value;
 

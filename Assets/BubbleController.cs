@@ -20,10 +20,16 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     [Tooltip("Sprint movement.  Value is 0 or 1. If 1, then is sprinting")]
     public InputAxis Sprint = InputAxis.DefaultMomentary;
 
+    public InputAxis Aim = InputAxis.DefaultMomentary;
+
     public float force = 1000f;
     public float maxSpeed = 50f;
     private List<GameObject> players = new List<GameObject>();
-    private GameObject closestPlayer;
+    [HideInInspector]
+    public GameObject closestPlayer;
+    public float trackingForce = 50f;
+    public float trackingRange = 5f;
+    public float minClosenessToTrack = 1f;
 
 
     void IInputAxisOwner.GetInputAxes(List<IInputAxisOwner.AxisDescriptor> axes) {
@@ -44,6 +50,10 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
         axes.Add(new() {
             DrivenAxis = () => ref Sprint,
             Name = "Sprint"
+        });
+        axes.Add(new() {
+            DrivenAxis = () => ref Aim,
+            Name = "Aim"
         });
     }
 
