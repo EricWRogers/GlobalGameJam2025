@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3679436519153245097}
   - component: {fileID: -677814486171002168}
   - component: {fileID: 811612764383062886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2955605775
+  GlobalObjectIdHash: 2829390670
   InScenePlacedSourceGlobalObjectIdHash: 2829390670
   DeferredDespawnTick: 0
   Ownership: 1
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 7592262082369594292}
   - component: {fileID: 3973548709539202046}
   - component: {fileID: 2469972931723832435}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 6675967322100258558}
   - component: {fileID: 3170616263008384272}
   - component: {fileID: 4143507379150574314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,6 +575,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7929218603492691473}
     m_Modifications:
+    - target: {fileID: 3265252319259585290, guid: 8352a7217bf075a46a46416bd439f25e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235449250207051758, guid: 8352a7217bf075a46a46416bd439f25e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5235449250207051758, guid: 8352a7217bf075a46a46416bd439f25e, type: 3}
       propertyPath: m_TagString
       value: Player
@@ -619,9 +627,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6297457918237658351, guid: 8352a7217bf075a46a46416bd439f25e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338424222020474661, guid: 8352a7217bf075a46a46416bd439f25e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7418519091078514475, guid: 8352a7217bf075a46a46416bd439f25e, type: 3}
       propertyPath: m_Name
       value: Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418519091078514475, guid: 8352a7217bf075a46a46416bd439f25e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110273638729090787, guid: 8352a7217bf075a46a46416bd439f25e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
