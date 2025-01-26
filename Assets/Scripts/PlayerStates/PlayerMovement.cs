@@ -47,7 +47,7 @@ public class PlayerMovement : IState {
             rb.linearVelocity = rb.linearVelocity.normalized * rb.linearVelocity.magnitude;
         }
 
-        rb.AddForce(moveDirection * Time.deltaTime * bubbleController.force);
+        rb.AddForce(moveDirection * bubbleController.force);
 
 
         if (rb.linearVelocity.magnitude > bubbleController.maxSpeed) {
@@ -93,8 +93,8 @@ public class PlayerMovement : IState {
         if (bubbleController.Fire.Value >= 1 && !dashed) {
             if (DistanceToClosestPlayer() <= bubbleController.distanceToDash) {
                 dashed = true;
-                TimerManager.Instance.CreateTimer(bubbleController.abilityCooldown, () => dashed = false);
-
+                TimerManager.Instance.CreateTimer(bubbleController.abilityCooldown, () => dashed = false, out Timer timer);
+                bubbleController.btnCtrl.StartCoolDown(timer);
                 Vector3 desiredVelocity = (bubbleController.closestPlayer.transform.position - bubbleController.transform.position) / 0.3f;
                 rb.linearVelocity = desiredVelocity;
                 //rb.AddForce(DirectionOfClosestPlayer() * bubbleController.dashForce, ForceMode.Impulse);
