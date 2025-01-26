@@ -14,7 +14,6 @@ public class PlayerMovement : IState {
     private Quaternion m_Upsidedown;
     private Rigidbody rb;
     private Vector3 moveDirection;
-    private Vector3 lastMagnitude;
 
 
     public PlayerMovement(BubbleController _controller) : base(_controller) {
@@ -39,8 +38,14 @@ public class PlayerMovement : IState {
     }
 
     public override void FixedUpdate() {
-        
+
+
+        if (rb.linearVelocity.magnitude < bubbleController.lastVelocity.magnitude) {
+            rb.linearVelocity = rb.linearVelocity.normalized * rb.linearVelocity.magnitude;
+        }
+
         rb.AddForce(moveDirection * Time.deltaTime * bubbleController.force);
+
 
         if (rb.linearVelocity.magnitude > bubbleController.maxSpeed) {
             rb.linearVelocity = rb.linearVelocity.normalized * bubbleController.maxSpeed;
@@ -49,6 +54,8 @@ public class PlayerMovement : IState {
         if (bubbleController.closestPlayer != null) {
             SoftTrack();
         }
+
+        bubbleController.lastVelocity = rb.linearVelocity;
     }
 
     private void SoftTrack() {

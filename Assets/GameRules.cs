@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.Netcode;
-using Unity.Services.Relay;
-using UnityEditor.PackageManager;
+using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,8 +26,8 @@ public class GameRules : NetworkBehaviour
     bool prepTimeEnd = false;
     bool gameEnd = false;
     public NetworkVariable<float> remainingTime = new NetworkVariable<float>(0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    public NetworkVariable<int> colorIndex = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
-    int colorIndex = 0;
     public static GameRules Instance
     {
         get; private set;
@@ -44,19 +43,18 @@ public class GameRules : NetworkBehaviour
         {
             Destroy(this);
         }
-        
+
     }
+
 
     private void Start()
     {
         SpawnPlayersForAllClients();
+        
 
         if (IsServer) //Server must handle it.
         {
-            foreach (var client in NetworkManager.Singleton.ConnectedClients)
-            {
-                ColorAssignmentsClientRPC(client.Key);
-            }
+
             remainingTime.Value = prepDuration; //We should lock ALL movement player and server untill this ends.
 
             foreach (var kvp in NetworkManager.Singleton.ConnectedClients)
@@ -64,11 +62,24 @@ public class GameRules : NetworkBehaviour
                 stockDictionary.Add(kvp.Value.PlayerObject.GetComponent<BubbleController>(), stocks);
             }
         }
+        if (IsServer)
+        {
+            foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+            {
+                ulong playerNetworkObjectRef = client.PlayerObject.GetComponentInParent<NetworkObject>().NetworkObjectId;
+                ColorAssignmentsClientRPC(client.ClientId, playerNetworkObjectRef);
+                colorIndex.Value++;
+            }
+        }
+        
+
 
         // TimerManager.Instance.CreateTimer(matchTime, EndMatch, out matchTimeRemaining);
 
-        
+
     }
+
+    
 
     private void Update()
     {
@@ -90,7 +101,7 @@ public class GameRules : NetworkBehaviour
                 SceneManager.LoadScene("LobbyScene");
 
                 //NetworkManager.Singleton.Shutdown();
-                
+
             }
 
             if (IsServer)
@@ -101,7 +112,7 @@ public class GameRules : NetworkBehaviour
                 }
             }
 
-            
+
 
         }
         else if (IsServer && remainingTime.Value <= 0) //Reenable movement somewhere here. If we hit this then we've elapsed prep time.
@@ -158,7 +169,7 @@ public class GameRules : NetworkBehaviour
             //TODO transition to spectator
             //TODO turn off player
         }
-       
+
 
         player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
     }
@@ -172,11 +183,20 @@ public class GameRules : NetworkBehaviour
 
     private void EndMatch()
     {
+        RemoveClientRPC();
+        if (NetworkManager.Singleton.IsHost)
+        {
+            SceneManager.LoadScene("LobbyScene");
+
+            //NetworkManager.Singleton.Shutdown();
+
+        }
+        /*
         var winner = stockDictionary.OrderByDescending(kvp => kvp.Value).First();
         ShowWinner();
         stockDictionary.Remove(winner.Key);
         ShowLosers();
-
+        */
     }
 
     public void ShowLosers()
@@ -221,15 +241,27 @@ public class GameRules : NetworkBehaviour
     }
 
     [ClientRpc]
-    private void ColorAssignmentsClientRPC(ulong id)
+    private void ColorAssignmentsClientRPC(ulong clientId, ulong obj)
     {
-        NetworkManager.Singleton.ConnectedClients.TryGetValue(id, out var client);
-        client.PlayerObject.GetComponent<PlayerData>().color = colorIndex;
-        client.PlayerObject.GetComponent<PlayerData>().stocks = stocks;
+        //NetworkManager.Singleton.ConnectedClients.TryGetValue(clientId, out var client);
+        /* if (client == null)
+         {
+             Debug.Log("Client null??");
+         }
+         if (client.PlayerObject == null)
+         {
+             Debug.Log("Cant find player");
+         }
+         if (client.PlayerObject.GetComponent<PlayerData>())
+         {
+        */
+        //NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(obj, out var playerNetworkObject);
+        //client.PlayerObject.GetComponent<PlayerData>().color = colorIndex.Value;
+        //client.PlayerObject.gameObject.GetComponent<PlayerData>().stocks = stocks;
+        }
+        
 
-        colorIndex++;
-        
-            
-        
-    }
+
+
+    
 }
