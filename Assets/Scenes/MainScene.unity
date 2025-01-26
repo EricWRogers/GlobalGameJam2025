@@ -3658,8 +3658,10 @@ MonoBehaviour:
   - {fileID: 1544848372}
   - {fileID: 1837537777}
   prepDuration: 5
-  matchTime: 180
+  matchTime: 10
   timerText: {fileID: 1860650517}
+  remainingTime:
+    m_InternalValue: 0
 --- !u!114 &1983083591
 MonoBehaviour:
   m_ObjectHideFlags: 0

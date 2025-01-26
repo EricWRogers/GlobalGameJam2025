@@ -27,11 +27,7 @@ public class LobbyManager : MonoBehaviour
         NetworkManager.Singleton.OnClientDisconnectCallback += RemovePlayerFromLobby;
     }
 
-    void OnDisable()
-    {
-        NetworkManager.Singleton.OnClientConnectedCallback -= AddPlayerToLobby;
-        NetworkManager.Singleton.OnClientDisconnectCallback -= RemovePlayerFromLobby;
-    }
+    
 
     private void AddPlayerToLobby(ulong clientId)
     {
@@ -82,7 +78,7 @@ public class LobbyManager : MonoBehaviour
 
     }
 
-    [ServerRpc(RequireOwnership =false)]
+    [ServerRpc(RequireOwnership = false)]
     void ServerHandleLobbyUIServerRPC()
     {
         int colorIndex = 0;
