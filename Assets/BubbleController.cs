@@ -133,19 +133,30 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
             ChangeState<PlayerMovement>();
         }
 
-        if (transform.position.y <= GameRules.Instance.killLevel && isBelowKillLevel == false ) {
-            isBelowKillLevel = true;
-            var id = GetComponent<NetworkObject>().OwnerClientId;
+        ulong clientId = gameObject.GetComponent<NetworkObject>().OwnerClientId;
 
-            
-            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-            GameRules.Instance.KillPlayerServerRPC(id);
-        }
-        else
+        bool isLocal = true;
+
+        if (NetworkManager.Singleton)
+            isLocal = NetworkManager.Singleton.LocalClientId == clientId;
+
+        if (isLocal)
         {
-            isBelowKillLevel = false;
-        }
 
+
+            if (transform.position.y <= GameRules.Instance.killLevel && isBelowKillLevel == false) {
+                isBelowKillLevel = true;
+                var id = GetComponent<NetworkObject>().OwnerClientId;
+
+
+                GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+                GameRules.Instance.KillPlayerServerRPC(id);
+            }
+            else
+            {
+                isBelowKillLevel = false;
+            }
+        }
         TrackPkayers();
     }
 
