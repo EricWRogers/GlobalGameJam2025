@@ -46,7 +46,7 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     public AbilityButtonControl btnCtrl;
     public ReticleController reticleController;
 
-
+    private bool isBelowKillLevel = false;
     void IInputAxisOwner.GetInputAxes(List<IInputAxisOwner.AxisDescriptor> axes) {
         axes.Add(new() {
             DrivenAxis = () => ref MoveX,
@@ -133,12 +133,17 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
             ChangeState<PlayerMovement>();
         }
 
-        if (transform.position.y <= GameRules.Instance.killLevel) {
-
+        if (transform.position.y <= GameRules.Instance.killLevel && isBelowKillLevel == false ) {
+            isBelowKillLevel = true;
             var id = GetComponent<NetworkObject>().OwnerClientId;
 
+            
             GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
             GameRules.Instance.KillPlayerServerRPC(id);
+        }
+        else
+        {
+            isBelowKillLevel = false;
         }
 
         TrackPkayers();
