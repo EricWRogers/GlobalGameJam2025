@@ -37,7 +37,7 @@ public class LobbyManager : MonoBehaviour
             {
                 GameObject playerUI = Instantiate(playerUIPrefab, playerListContainer.transform);
 
-                
+                //playerUI.GetComponent
 
                 playerUIInstances[client.Key] = playerUI;
             }
