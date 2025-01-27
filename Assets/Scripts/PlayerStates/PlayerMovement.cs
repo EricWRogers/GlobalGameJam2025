@@ -87,6 +87,8 @@ public class PlayerMovement : IState {
 
 
 
+        if (bubbleController.closestPlayer)
+        {
         if (DistanceToClosestPlayer() <= bubbleController.distanceToDash) {
             bubbleController.ShowReticle();
             if (bubbleController.Fire.Value >= 1 && !dashed) {
@@ -98,6 +100,11 @@ public class PlayerMovement : IState {
                 //rb.AddForce(DirectionOfClosestPlayer() * bubbleController.dashForce, ForceMode.Impulse);
             }
         } else {
+            bubbleController.HideReticle();
+        }
+        }
+        else
+        {
             bubbleController.HideReticle();
         }
 
