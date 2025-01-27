@@ -44,7 +44,12 @@ public class PlayerMovement : IState {
             rb.linearVelocity = rb.linearVelocity.normalized * rb.linearVelocity.magnitude;
         }
 
-        rb.AddForce(moveDirection * bubbleController.force);
+        // 0 pointing the same way 1 pointing the opposite
+        float oppositeAmount = Mathf.Clamp(Vector3.Dot(rb.linearVelocity.normalized, moveDirection.normalized) * -1, 0.0f, 1.0f);
+        float speedPercentage = rb.linearVelocity.magnitude/bubbleController.maxSpeed;
+        float breakingForce = speedPercentage * oppositeAmount * bubbleController.oppositeForce;
+
+        rb.AddForce(moveDirection * (bubbleController.force + breakingForce));
 
 
         if (rb.linearVelocity.magnitude > bubbleController.maxSpeed) {

@@ -26,6 +26,7 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     public InputAxis Fire = InputAxis.DefaultMomentary;
 
     public float force = 1000f;
+    public float oppositeForce = 10.0f;
     public float maxSpeed = 50f;
     private List<GameObject> players = new List<GameObject>();
     [HideInInspector]
