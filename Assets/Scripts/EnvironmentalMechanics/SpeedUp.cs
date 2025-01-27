@@ -10,7 +10,7 @@ public class SpeedUp : NetworkBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.CompareTag("Player"))
+        if(col.gameObject.CompareTag("Player") && col.isTrigger == false)
         {
             ulong clientId = col.GetComponentInParent<NetworkObject>().OwnerClientId;
 
@@ -61,7 +61,7 @@ public class SpeedUp : NetworkBehaviour
 
     public void OnTriggerExit(Collider col)
     {
-        if(col.gameObject.CompareTag("Player"))
+        if(col.gameObject.CompareTag("Player") && col.isTrigger == false)
         {
             ulong clientId = col.GetComponentInParent<NetworkObject>().OwnerClientId;
 

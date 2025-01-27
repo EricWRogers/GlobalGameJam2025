@@ -10,10 +10,12 @@ public class Bumper : NetworkBehaviour
 
     public void OnTriggerEnter(Collider col)
     {
+        
         //if (!IsServer) return;
 
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player") && col.isTrigger == false)
         {
+            Debug.Log("Bump");
             ulong clientId = col.GetComponentInParent<NetworkObject>().OwnerClientId;
 
             bool isLocal = true;
@@ -78,7 +80,7 @@ public class Bumper : NetworkBehaviour
 
     public void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player") && col.isTrigger == false)
         {
             ulong clientId = col.GetComponentInParent<NetworkObject>().OwnerClientId;
 
