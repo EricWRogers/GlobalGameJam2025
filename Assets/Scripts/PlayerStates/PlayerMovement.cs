@@ -1,9 +1,10 @@
-using UnityEngine;
 using OmnicatLabs.Input;
-using Unity.Cinemachine;
 using OmnicatLabs.Timers;
+using Unity.Cinemachine;
+using UnityEngine;
 
-public class PlayerMovement : IState {
+public class PlayerMovement : IState
+{
     private InputAxis moveX, moveZ;
     private BubbleController bubbleController;
     Vector3 m_LastRawInput;
@@ -16,55 +17,64 @@ public class PlayerMovement : IState {
     private bool dashed = false;
 
 
-    public PlayerMovement(BubbleController _controller) : base(_controller) {
+    public PlayerMovement(BubbleController _controller) : base(_controller)
+    {
         bubbleController = _controller;
         rb = bubbleController.GetComponentInChildren<Rigidbody>();
     }
 
-    public override void Initialize() {
+    public override void Initialize()
+    {
         bubbleController = controller as BubbleController;
         rb = bubbleController.GetComponentInChildren<Rigidbody>();
-        
+
         moveX = bubbleController.MoveX;
         moveZ = bubbleController.MoveZ;
     }
 
-    public override void Enter() {
-        
+    public override void Enter()
+    {
+
     }
 
-    public override void Exit() {
-        
+    public override void Exit()
+    {
+
     }
 
-    public override void FixedUpdate() {
+    public override void FixedUpdate()
+    {
 
 
-        if (rb.linearVelocity.magnitude < bubbleController.lastVelocity.magnitude) {
+        if (rb.linearVelocity.magnitude < bubbleController.lastVelocity.magnitude)
+        {
             rb.linearVelocity = rb.linearVelocity.normalized * rb.linearVelocity.magnitude;
         }
 
         // 0 pointing the same way 1 pointing the opposite
         float oppositeAmount = Mathf.Clamp(Vector3.Dot(rb.linearVelocity.normalized, moveDirection.normalized) * -1, 0.0f, 1.0f);
-        float speedPercentage = rb.linearVelocity.magnitude/bubbleController.maxSpeed;
+        float speedPercentage = rb.linearVelocity.magnitude / bubbleController.maxSpeed;
         float breakingForce = speedPercentage * oppositeAmount * bubbleController.oppositeForce;
 
         rb.AddForce(moveDirection * (bubbleController.force + breakingForce));
 
         rb.angularDamping = 0.1f;
 
-        if (rb.linearVelocity.magnitude > bubbleController.maxSpeed) {
+        if (rb.linearVelocity.magnitude > bubbleController.maxSpeed)
+        {
             rb.linearVelocity = rb.linearVelocity.normalized * bubbleController.maxSpeed;
         }
 
-        if (bubbleController.closestPlayer != null) {
+        if (bubbleController.closestPlayer != null)
+        {
             SoftTrack();
         }
 
         bubbleController.lastVelocity = rb.linearVelocity;
     }
 
-    private void SoftTrack() {
+    private void SoftTrack()
+    {
         Vector3 directionToTarget = (bubbleController.closestPlayer.transform.position - bubbleController.transform.position).normalized;
         float distanceToTarget = Vector3.Distance(bubbleController.transform.position, bubbleController.closestPlayer.transform.position);
 
@@ -87,7 +97,8 @@ public class PlayerMovement : IState {
 
     private float DistanceToClosestPlayer() => Vector3.Distance(bubbleController.transform.position, bubbleController.closestPlayer.transform.position);
 
-    public override void Update() {
+    public override void Update()
+    {
         ProcessInput();
 
 
@@ -95,19 +106,23 @@ public class PlayerMovement : IState {
 
         if (bubbleController.closestPlayer)
         {
-        if (DistanceToClosestPlayer() <= bubbleController.distanceToDash) {
-            bubbleController.ShowReticle();
-            if (bubbleController.Fire.Value >= 1 && !dashed) {
-                dashed = true;
-                TimerManager.Instance.CreateTimer(bubbleController.abilityCooldown, () => { dashed = false; bubbleController.btnCtrl.EndCooldown(); }, out Timer timer);
-                bubbleController.btnCtrl.StartCoolDown(timer);
-                Vector3 desiredVelocity = (bubbleController.closestPlayer.transform.position - bubbleController.transform.position) / 0.3f;
-                rb.linearVelocity = desiredVelocity;
-                //rb.AddForce(DirectionOfClosestPlayer() * bubbleController.dashForce, ForceMode.Impulse);
+            if (DistanceToClosestPlayer() <= bubbleController.distanceToDash)
+            {
+                bubbleController.ShowReticle();
+                if (bubbleController.Fire.Value >= 1 && !dashed)
+                {
+                    dashed = true;
+                    TimerManager.Instance.CreateTimer(bubbleController.abilityCooldown, () => { dashed = false; bubbleController.btnCtrl.EndCooldown(); }, out Timer timer);
+                    bubbleController.btnCtrl.StartCoolDown(timer);
+                    Vector3 desiredVelocity = (bubbleController.closestPlayer.transform.position - bubbleController.transform.position) / 0.3f;
+                    rb.linearVelocity = desiredVelocity;
+                    //rb.AddForce(DirectionOfClosestPlayer() * bubbleController.dashForce, ForceMode.Impulse);
+                }
             }
-        } else {
-            bubbleController.HideReticle();
-        }
+            else
+            {
+                bubbleController.HideReticle();
+            }
         }
         else
         {
@@ -128,13 +143,15 @@ public class PlayerMovement : IState {
     //    bubbleController.closestPlayer.GetComponent<Rigidbody>().linearVelocity = dir * rb.linearVelocity.magnitude * 10000f;
     //}
 
-    private void ProcessInput() {
+    private void ProcessInput()
+    {
         //var rawInput = new Vector3(bubbleController.MoveX.Value, 0, bubbleController.MoveZ.Value);
 
         Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
         Vector3 cameraRight = Vector3.Scale(Camera.main.transform.right, new Vector3(1, 0, 1)).normalized;
 
-        if (bubbleController.Aim.Value >= 1) {
+        if (bubbleController.Aim.Value >= 1)
+        {
             Debug.Log("Aiming");
         }
 

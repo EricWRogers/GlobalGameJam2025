@@ -28,10 +28,10 @@ public class Collision : MonoBehaviour
                 float otherVelocity = otherRb.linearVelocity.magnitude;
                 Debug.Log("knock");
                 if (myVelocity > otherVelocity) {
-                    Vector3 dir = (other.transform.position - transform.position).normalized;
+                    Vector3 dir = (transform.position - other.transform.position).normalized;
                     otherRb.linearVelocity = dir * myVelocity * knockbackMultiplier;
                 } else if (myVelocity < otherVelocity) {
-                    Vector3 knockbackDirection = (transform.position - other.transform.position).normalized;
+                    Vector3 knockbackDirection = (other.transform.position - transform.position).normalized;
                     rb.linearVelocity = knockbackDirection * otherVelocity * knockbackMultiplier;
                 }
             }

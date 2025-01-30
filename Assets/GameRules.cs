@@ -192,6 +192,9 @@ public class GameRules : NetworkBehaviour
 
         ClientPositionCorrectClientRPC(client.ClientId);
         player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
+        Rigidbody rigi = player.GetComponent<Rigidbody>();
+        rigi.linearVelocity = Vector3.zero;
+        rigi.angularVelocity = Vector3.zero;
     }
 
     [ClientRpc]
@@ -205,7 +208,7 @@ public class GameRules : NetworkBehaviour
 
         
         playerData.stocks = updatedStocks;
-        player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
+       // player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
     }
 
     [ClientRpc]
@@ -216,6 +219,10 @@ public class GameRules : NetworkBehaviour
 
         BubbleController player = client.PlayerObject.GetComponent<BubbleController>();
         player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
+        Rigidbody rigi = player.GetComponent<Rigidbody>();
+        rigi.linearVelocity = Vector3.zero;
+        rigi.angularVelocity = Vector3.zero;
+
     }
 
     private void EndMatch()
