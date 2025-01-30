@@ -216,6 +216,7 @@ MonoBehaviour:
       Time: 0
     Restrictions: 6
   force: 10
+  oppositeForce: 15
   maxSpeed: 25
   closestPlayer: {fileID: 0}
   trackingForce: 10

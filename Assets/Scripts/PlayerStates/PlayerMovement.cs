@@ -51,6 +51,7 @@ public class PlayerMovement : IState {
 
         rb.AddForce(moveDirection * (bubbleController.force + breakingForce));
 
+        rb.angularDamping = 0.1f;
 
         if (rb.linearVelocity.magnitude > bubbleController.maxSpeed) {
             rb.linearVelocity = rb.linearVelocity.normalized * bubbleController.maxSpeed;
