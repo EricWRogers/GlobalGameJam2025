@@ -226,9 +226,9 @@ MonoBehaviour:
   distaceToCollide: 2
   knockbackMultiplier: 10
   lastVelocity: {x: 0, y: 0, z: 0}
-  distanceToDash: 5
+  distanceToDash: 10
   abilityCooldown: 2.5
-  dashForce: 20
+  dashForce: 40
   btnCtrl: {fileID: 0}
   reticleController: {fileID: 0}
   lifeChangeCooldown: 0.5
@@ -421,6 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243773f571a4bd3439ad34f2e50dbbd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   knockbackMultiplier: 1.5
 --- !u!114 &811612764383062886
 MonoBehaviour:
