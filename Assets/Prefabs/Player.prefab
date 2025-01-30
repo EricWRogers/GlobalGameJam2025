@@ -226,9 +226,9 @@ MonoBehaviour:
   distaceToCollide: 2
   knockbackMultiplier: 10
   lastVelocity: {x: 0, y: 0, z: 0}
-  distanceToDash: 10
-  abilityCooldown: 2
-  dashForce: 10
+  distanceToDash: 5
+  abilityCooldown: 2.5
+  dashForce: 20
   btnCtrl: {fileID: 0}
   reticleController: {fileID: 0}
   lifeChangeCooldown: 0.5
@@ -408,7 +408,7 @@ MonoBehaviour:
   NetworkRigidbodyBaseExpanded: 0
   UseRigidBodyForMotion: 1
   AutoUpdateKinematicState: 1
-  AutoSetKinematicOnDespawn: 1
+  AutoSetKinematicOnDespawn: 0
 --- !u!114 &-677814486171002168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1076,6 +1076,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7929218603492691473}
     m_Modifications:
+    - target: {fileID: 1796096771181328877, guid: 8352a7217bf075a46a46416bd439f25e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796096771181328877, guid: 8352a7217bf075a46a46416bd439f25e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3265252319259585290, guid: 8352a7217bf075a46a46416bd439f25e, type: 3}
       propertyPath: m_Layer
       value: 6
