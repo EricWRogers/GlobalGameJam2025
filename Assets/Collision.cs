@@ -16,8 +16,6 @@ public class Collision : NetworkBehaviour
     {
         if (IsServer)
         {
-
-
             if (other.CompareTag("MapMechanic"))
             {
                 Debug.Log("Entering");

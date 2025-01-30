@@ -18,6 +18,7 @@ public class GameRules : NetworkBehaviour
 
     public GameObject playerPrefab;
     public List<Transform> spawnPoints = new List<Transform>();
+    private List<Transform> usedSpawnPoints = new List<Transform>();
 
     public float prepDuration = 5f;
     public float matchTime = 180f; //180
@@ -82,6 +83,9 @@ public class GameRules : NetworkBehaviour
 
     private void Update()
     {
+       
+
+
         if (IsServer && remainingTime.Value > 0)
         {
             remainingTime.Value -= Time.deltaTime;
@@ -191,7 +195,11 @@ public class GameRules : NetworkBehaviour
         }
 
         ClientPositionCorrectClientRPC(client.ClientId);
+       
+
+        Debug.Log("Spawnpoint Count: " + spawnPoints.Count);
         player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
+        
         Rigidbody rigi = player.GetComponent<Rigidbody>();
         rigi.linearVelocity = Vector3.zero;
         rigi.angularVelocity = Vector3.zero;
@@ -214,14 +222,19 @@ public class GameRules : NetworkBehaviour
     [ClientRpc]
     private void ClientPositionCorrectClientRPC(ulong id)
     {
+
         if (!NetworkManager.Singleton.ConnectedClients.TryGetValue(id, out var client))
             return;
+
+       
 
         BubbleController player = client.PlayerObject.GetComponent<BubbleController>();
         player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
         Rigidbody rigi = player.GetComponent<Rigidbody>();
         rigi.linearVelocity = Vector3.zero;
         rigi.angularVelocity = Vector3.zero;
+
+
 
     }
 
@@ -262,6 +275,7 @@ public class GameRules : NetworkBehaviour
         {
             SpawnPlayer(client.Key);
         }
+
     }
 
     private void SpawnPlayer(ulong clientId)
@@ -278,9 +292,18 @@ public class GameRules : NetworkBehaviour
     }
     private Transform GetSpawnPoint()
     {
+        if(spawnPoints.Count == 0 || spawnPoints.Count <= 1)
+        {
+            foreach (Transform sp in usedSpawnPoints)
+            {
+                spawnPoints.Add(sp);
+            }
+            usedSpawnPoints.Clear();
+        }
         int random = Random.Range(0, spawnPoints.Count);
         Transform spawnPoint = spawnPoints[random];
-        spawnPoints.Remove(spawnPoints[random]);
+        spawnPoints.Remove(spawnPoint);
+        usedSpawnPoints.Add(spawnPoint);
 
         return spawnPoint;
     }
