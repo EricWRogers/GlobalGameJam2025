@@ -5,29 +5,28 @@ using OmnicatLabs.Timers;
 
 public class AbilityButtonControl : MonoBehaviour
 {
-    public Image grayedOut;
     public TextMeshProUGUI text;
-    [HideInInspector]
-    private Image image;
+    public Image darken;
     private Timer timer;
-    private void Start() {
-        image = GetComponent<Image>();
-    }
+    private bool disabled;
 
     public void StartCoolDown(Timer newTimer) {
-        grayedOut.enabled = true;
+        disabled = true;
         text.enabled = true;
+        darken.enabled = true;
         timer = newTimer;
     }
 
     public void Update() {
-        if (grayedOut.enabled) {
-            text.SetText(timer.timeRemaining.ToString());
+        if (disabled) {
+            text.SetText((Mathf.Round(timer.timeRemaining * 10f) / 10f).ToString());
+            darken.fillAmount = timer.timeRemaining / timer.amountOfTime;
         }
     }
 
     public void EndCooldown() {
-        grayedOut.enabled = false;
+        disabled = false;
         text.enabled = false;
+        darken.enabled = false;
     }
 }

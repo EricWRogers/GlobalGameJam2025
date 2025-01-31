@@ -45,6 +45,7 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     public float dashForce = 10f;
     [HideInInspector]
     public AbilityButtonControl btnCtrl;
+    [HideInInspector]
     public ReticleController reticleController;
     [HideInInspector]
     public ulong clientId;
@@ -175,11 +176,11 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     }
 
     public void ShowReticle() {
-        reticleController.GetComponent<Image>().enabled = true;
+        reticleController.GetComponent<CanvasGroup>().alpha = 1f;
     }
 
     public void HideReticle() {
-        reticleController.GetComponent<Image>().enabled = false;
+        reticleController.GetComponent<CanvasGroup>().alpha = 0f;
     }
 
     private void TrackPkayers() {

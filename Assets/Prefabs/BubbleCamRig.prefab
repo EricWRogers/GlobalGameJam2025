@@ -126,7 +126,7 @@ MonoBehaviour:
   TargetOffset: {x: 0, y: 0, z: 0}
   TrackerSettings:
     BindingMode: 4
-    PositionDamping: {x: 1, y: 1, z: 1}
+    PositionDamping: {x: 2.5, y: 2.5, z: 2.5}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
@@ -196,7 +196,7 @@ MonoBehaviour:
       Size: {x: 0.8, y: 0.8}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 0, z: 0}
+  TargetOffset: {x: 0, y: -0.1, z: 0}
   Damping: {x: 0.5, y: 0.5}
   Lookahead:
     Enabled: 0
@@ -217,11 +217,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollideAgainst:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 128
   IgnoreTag: Player
   TransparentLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   MinimumDistanceFromTarget: 0.01
   AvoidObstacles:
     Enabled: 1
@@ -231,11 +231,11 @@ MonoBehaviour:
     UseFollowTarget:
       Enabled: 0
       YOffset: 1
-    Strategy: 0
+    Strategy: 2
     MaximumEffort: 4
     SmoothingTime: 0
-    Damping: 0.2
-    DampingWhenOccluded: 0
+    Damping: 0.5
+    DampingWhenOccluded: 0.05
   ShotQualityEvaluation:
     Enabled: 0
     OptimalDistance: 10
