@@ -46,6 +46,8 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
     [HideInInspector]
     public AbilityButtonControl btnCtrl;
     public ReticleController reticleController;
+    [HideInInspector]
+    public ulong clientId;
 
     private bool isBelowKillLevel = false;
 
@@ -99,7 +101,7 @@ public class BubbleController : PlayerControllerBase, Unity.Cinemachine.IInputAx
             return; 
         }
 
-        ulong clientId = transform.GetComponent<NetworkObject>().OwnerClientId;
+        clientId = transform.GetComponent<NetworkObject>().OwnerClientId;
         
         var id = GetComponent<NetworkObject>().OwnerClientId;
         NetworkManager.Singleton.ConnectedClients.TryGetValue(id, out var client);

@@ -1,7 +1,10 @@
 using OmnicatLabs.Input;
 using OmnicatLabs.Timers;
 using Unity.Cinemachine;
+using Unity.Netcode;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class PlayerMovement : IState
 {
@@ -102,13 +105,14 @@ public class PlayerMovement : IState
         ProcessInput();
 
 
-
-
+        
         if (bubbleController.closestPlayer)
         {
             if (DistanceToClosestPlayer() <= bubbleController.distanceToDash)
             {
-                bubbleController.ShowReticle();
+                if (!bubbleController.IsOwner)
+                    bubbleController.ShowReticle();
+
                 if (bubbleController.Fire.Value >= 1 && !dashed)
                 {
                     dashed = true;
