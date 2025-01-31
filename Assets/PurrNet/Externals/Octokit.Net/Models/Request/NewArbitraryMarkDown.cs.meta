@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: d5b00b9f33991854f9f6168b026c6440
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/NewArbitraryMarkDown.cs
+  uploadId: 727040

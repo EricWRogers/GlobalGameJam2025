@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 827514a396202d44ca28c9cd4646d3bf
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/EnvironmentApprovals.cs
+  uploadId: 727040

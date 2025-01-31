@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ef822116ff37aad4187908124a7be350
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Octokit.Editor.asmdef
+  uploadId: 727040

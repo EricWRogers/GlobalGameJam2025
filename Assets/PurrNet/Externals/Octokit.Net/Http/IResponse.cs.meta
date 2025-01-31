@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: a71b0c56c5eb136409b9c7c910008eb9
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Http/IResponse.cs
+  uploadId: 727040

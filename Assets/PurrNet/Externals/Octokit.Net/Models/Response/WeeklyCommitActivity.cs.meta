@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 99d812e68db05e44f8720d179e3e40cd
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/WeeklyCommitActivity.cs
+  uploadId: 727040

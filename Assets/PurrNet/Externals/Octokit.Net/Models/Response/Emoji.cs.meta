@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 80bf2807d48e06a4cb71f9527ff2a9dd
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/Emoji.cs
+  uploadId: 727040

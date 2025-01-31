@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 8f67e858ba0d809409968edfd21d2ce4
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/WorkflowJobStep.cs
+  uploadId: 727040

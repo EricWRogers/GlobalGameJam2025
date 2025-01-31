@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 2790bf202e490d04a976420e5b73e098
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/CheckSuiteTriggerRequest.cs
+  uploadId: 727040

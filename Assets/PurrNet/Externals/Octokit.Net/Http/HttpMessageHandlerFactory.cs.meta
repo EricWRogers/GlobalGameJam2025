@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 8429a3d6351b5044b8bd69051e6f8a5d
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Http/HttpMessageHandlerFactory.cs
+  uploadId: 727040

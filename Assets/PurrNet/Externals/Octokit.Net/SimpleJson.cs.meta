@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: d8e3e5ace78d1074cb7f859514d6b7a6
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/SimpleJson.cs
+  uploadId: 727040

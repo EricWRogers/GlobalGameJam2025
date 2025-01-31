@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: e09876ff55e63ad4780cd3a8481bb39a
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/7zip/Compress/LzmaAlone/LzmaBench.cs
+  uploadId: 727040

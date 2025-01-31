@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: f9a094305c4e41d8bb1744711f580421
+timeCreated: 1736790404
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Runtime/BitPacker/BitPacker.Tests/ZigZagEncodingTests.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: e796ad895d04f594b98f0448bc7f88cd
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/Enterprise/EnterprisePreReceiveEnvironmentsClient.cs
+  uploadId: 727040

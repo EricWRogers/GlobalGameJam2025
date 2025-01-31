@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 52d524dc2b78ee14c8d8cfd45366fdc9
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Helpers/Ensure.cs
+  uploadId: 727040

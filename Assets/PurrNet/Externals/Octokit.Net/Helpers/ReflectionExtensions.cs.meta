@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 6442c02ffab10f041a6f59ef688d23c4
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Helpers/ReflectionExtensions.cs
+  uploadId: 727040

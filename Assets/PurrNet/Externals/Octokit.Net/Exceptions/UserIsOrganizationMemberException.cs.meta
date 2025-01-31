@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 52f6deadcdc9a6e45b27a1919109e253
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Exceptions/UserIsOrganizationMemberException.cs
+  uploadId: 727040

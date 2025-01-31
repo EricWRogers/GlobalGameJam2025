@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: fb4a8df13da68a14c973a13e0ee82a8e
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Authentication/AnonymousAuthenticator.cs
+  uploadId: 727040

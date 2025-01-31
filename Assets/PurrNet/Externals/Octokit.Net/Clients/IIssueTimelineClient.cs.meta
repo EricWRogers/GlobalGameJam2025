@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: e37773480da755f49a25664584edebaf
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/IIssueTimelineClient.cs
+  uploadId: 727040

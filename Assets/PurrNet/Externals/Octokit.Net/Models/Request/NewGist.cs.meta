@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: a42f34b117930244793051d4284a37bb
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/NewGist.cs
+  uploadId: 727040

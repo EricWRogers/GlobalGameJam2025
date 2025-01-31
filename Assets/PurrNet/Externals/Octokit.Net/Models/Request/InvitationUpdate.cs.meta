@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 30a54477e5b1f1445b512f48e6aa929b
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/InvitationUpdate.cs
+  uploadId: 727040

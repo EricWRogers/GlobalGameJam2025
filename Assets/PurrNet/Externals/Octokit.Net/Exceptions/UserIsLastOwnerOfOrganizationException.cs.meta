@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 6f130d38f0fbf874090078a40e31dace
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Exceptions/UserIsLastOwnerOfOrganizationException.cs
+  uploadId: 727040

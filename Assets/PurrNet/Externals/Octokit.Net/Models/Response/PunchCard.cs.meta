@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: dcfabb133e4a73a40afd01acd913711f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/PunchCard.cs
+  uploadId: 727040

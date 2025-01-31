@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 021c36a2b8a218e418585e09c5e2719a
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Http/ApiConnection.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: dac1c4a90cdef1a459c3553f1247d2cc
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/IssueEventProjectCard.cs
+  uploadId: 727040

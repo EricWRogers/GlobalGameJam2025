@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 4af5062753c40fd4da00eb106d119999
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/NewCheckRunImage.cs
+  uploadId: 727040

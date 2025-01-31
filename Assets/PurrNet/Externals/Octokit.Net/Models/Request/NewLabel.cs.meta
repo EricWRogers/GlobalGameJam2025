@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 9da73060323bb05458d8b80dbcca51ef
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/NewLabel.cs
+  uploadId: 727040

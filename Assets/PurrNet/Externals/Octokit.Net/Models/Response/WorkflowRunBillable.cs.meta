@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 8f21793c1dcd42547af5b1c2631caf92
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/WorkflowRunBillable.cs
+  uploadId: 727040

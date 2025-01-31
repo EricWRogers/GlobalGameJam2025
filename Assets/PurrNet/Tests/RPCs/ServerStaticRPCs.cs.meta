@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 47dc2d7b490b8954686bfd43d355edc3
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Tests/RPCs/ServerStaticRPCs.cs
+  uploadId: 727040

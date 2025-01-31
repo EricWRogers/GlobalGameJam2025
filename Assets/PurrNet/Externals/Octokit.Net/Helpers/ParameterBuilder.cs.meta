@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 6e2505b3324cd0a448ccb804cba02c3e
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Helpers/ParameterBuilder.cs
+  uploadId: 727040

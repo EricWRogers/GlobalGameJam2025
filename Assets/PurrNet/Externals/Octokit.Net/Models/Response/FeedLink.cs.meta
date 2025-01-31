@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 036294eb36a00124982be44b7a7548a4
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/FeedLink.cs
+  uploadId: 727040

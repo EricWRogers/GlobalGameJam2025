@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 3f1bdc640bde22e4eaf0f9459e28fe85
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/Enterprise/NewLdapMapping.cs
+  uploadId: 727040

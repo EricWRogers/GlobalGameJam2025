@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 0d9e9b2a29bf19841975cfa6931e5c7f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/Copilot/SeatBreakdown.cs
+  uploadId: 727040

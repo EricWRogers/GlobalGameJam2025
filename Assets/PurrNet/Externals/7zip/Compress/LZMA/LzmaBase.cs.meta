@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 826b68be30e30b64ea86df7d6932a087
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/7zip/Compress/LZMA/LzmaBase.cs
+  uploadId: 727040

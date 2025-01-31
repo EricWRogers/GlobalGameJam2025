@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: f2cc964c383d7ce45b6db5ebeb777a34
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/AccessToken.cs
+  uploadId: 727040

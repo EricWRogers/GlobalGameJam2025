@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: aebb4f15e1b3c9742842d6ac6aaf9ee5
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Helpers/TwoFactorChallengeResult.cs
+  uploadId: 727040

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b6ce637610638294b88a8c624b4d27c0
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/LICENSE.txt
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 9836aa349e57ec04ba09f10497f19ac7
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/7zip/Compress/LZ/LzInWindow.cs
+  uploadId: 727040

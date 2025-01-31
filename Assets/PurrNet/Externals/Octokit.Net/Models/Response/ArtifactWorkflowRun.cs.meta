@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 6744ba3229c54594e9173dfd6f567516
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/ArtifactWorkflowRun.cs
+  uploadId: 727040

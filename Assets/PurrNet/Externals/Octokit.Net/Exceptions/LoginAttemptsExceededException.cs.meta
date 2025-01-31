@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: ffc72296b98c9a84fa062df0bce9239d
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Exceptions/LoginAttemptsExceededException.cs
+  uploadId: 727040

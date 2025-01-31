@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: b897ce37b1ba2bc4caebb3ba1b8fc321
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/ActivityPayloads/CreateEventPayload.cs
+  uploadId: 727040

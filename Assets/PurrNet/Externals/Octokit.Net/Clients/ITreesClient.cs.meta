@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: ac20250c5ca6db64fa18d32e0e5aea81
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/ITreesClient.cs
+  uploadId: 727040

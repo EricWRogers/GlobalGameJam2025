@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 12d45f24e3450444090c65da56aa3ed3
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Exceptions/RepositoryExistsException.cs
+  uploadId: 727040

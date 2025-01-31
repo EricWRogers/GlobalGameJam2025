@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 27f40a41df801504787ee4c1b6240258
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/DependencyDiff.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: c8bde8a0c0ecdef4aa7fc9e9d73889e2
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/NewTree.cs
+  uploadId: 727040

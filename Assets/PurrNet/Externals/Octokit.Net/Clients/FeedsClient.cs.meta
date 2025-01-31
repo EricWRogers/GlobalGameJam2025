@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 27ea95aab1272464ebc131f9f673d5cc
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/FeedsClient.cs
+  uploadId: 727040

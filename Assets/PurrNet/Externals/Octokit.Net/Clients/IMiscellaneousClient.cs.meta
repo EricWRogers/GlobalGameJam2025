@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: ccb5f8fef61ba6a44be531b7d50e886e
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/IMiscellaneousClient.cs
+  uploadId: 727040

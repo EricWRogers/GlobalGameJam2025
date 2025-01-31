@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: a015fac32ad4e014dac740a7fcd308e2
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Exceptions/TwoFactorAuthorizationException.cs
+  uploadId: 727040

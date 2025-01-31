@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 3384b15aa6e5d4c48a240c0a45ede542
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/7zip/Common/CommandLineParser.cs
+  uploadId: 727040

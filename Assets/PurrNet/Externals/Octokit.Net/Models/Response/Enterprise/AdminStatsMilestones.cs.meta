@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 532d19f728c4c2a46b3434afd17ee2fd
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/Enterprise/AdminStatsMilestones.cs
+  uploadId: 727040

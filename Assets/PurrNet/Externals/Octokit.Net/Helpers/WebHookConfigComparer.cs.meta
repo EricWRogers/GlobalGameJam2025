@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 4b5b463e9a8ee784eb0225c232a6466b
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Helpers/WebHookConfigComparer.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 0df18a5e6923d7d4b9065bfbafe64355
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/NewGpgKey.cs
+  uploadId: 727040

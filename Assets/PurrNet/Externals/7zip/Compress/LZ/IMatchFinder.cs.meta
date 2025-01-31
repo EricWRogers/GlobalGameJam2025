@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 6743bafaf49658341b04d5a159a2c7fa
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/7zip/Compress/LZ/IMatchFinder.cs
+  uploadId: 727040

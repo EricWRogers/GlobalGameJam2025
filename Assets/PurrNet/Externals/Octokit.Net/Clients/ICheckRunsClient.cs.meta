@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 2fe7716aa84f0d146af7d1668e8a0de5
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/ICheckRunsClient.cs
+  uploadId: 727040

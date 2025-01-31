@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: f26ca94f3ee4a9a4eab8092a351c6c59
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/MembershipState.cs
+  uploadId: 727040

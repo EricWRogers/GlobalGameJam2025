@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 49d60327fcac53e4e93b10a5ad5e3a3d
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Exceptions/PullRequestMismatchException.cs
+  uploadId: 727040

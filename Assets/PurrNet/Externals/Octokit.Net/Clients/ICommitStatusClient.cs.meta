@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 82d37b26eaa2ef34da729cfc562dc83d
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/ICommitStatusClient.cs
+  uploadId: 727040

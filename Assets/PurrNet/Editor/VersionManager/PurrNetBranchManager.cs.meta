@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: f97e9acb5ccb52640b083bc1b50cd844
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Editor/VersionManager/PurrNetBranchManager.cs
+  uploadId: 727040

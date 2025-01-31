@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 732307fa719704040b0a0d5b6e2225d3
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/ProjectCardMove.cs
+  uploadId: 727040

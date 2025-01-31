@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 259d3f941b5d47e45b5840269a4e9244
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Common/CheckSuitePreferenceAutoTrigger.cs
+  uploadId: 727040

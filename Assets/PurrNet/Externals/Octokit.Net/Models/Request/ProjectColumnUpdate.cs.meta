@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 96dc2ff5d6579da4dbf3dd98ae65b935
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/ProjectColumnUpdate.cs
+  uploadId: 727040

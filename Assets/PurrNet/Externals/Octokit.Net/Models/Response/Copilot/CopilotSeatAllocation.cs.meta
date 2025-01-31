@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 6a66e8722353bdc4da483ccc7789dfaf
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/Copilot/CopilotSeatAllocation.cs
+  uploadId: 727040

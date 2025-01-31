@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: d4121c59fed94c34297a5097a3331b1c
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/ActivityPayloads/CheckRunEventPayload.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: a1dca1f43102b4e43822997ad3519009
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/RepositoryForksListRequest.cs
+  uploadId: 727040

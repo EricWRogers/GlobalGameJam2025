@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 75886f9f993bb204dbcf8772a1b41c77
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/ActivityPayloads/PushWebhookCommitter.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: c27330c33d8dfdd40865f71f496f79d2
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/BranchProtectionUpdate.cs
+  uploadId: 727040

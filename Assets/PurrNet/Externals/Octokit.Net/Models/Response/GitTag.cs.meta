@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 2e952729d4b7ad54b9bc99270dfd2d56
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/GitTag.cs
+  uploadId: 727040

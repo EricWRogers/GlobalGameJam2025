@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: d495af3f787488643981c179acfbf4d7
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/IIssuesLabelsClient.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: a47e7bf5328ef8b44918fdfa0f121371
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/NewProjectCard.cs
+  uploadId: 727040

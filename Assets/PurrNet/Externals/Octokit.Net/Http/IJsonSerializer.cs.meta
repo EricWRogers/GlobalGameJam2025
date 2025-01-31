@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 002a1d0baccb3054584dd6a92d0f62e3
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Http/IJsonSerializer.cs
+  uploadId: 727040

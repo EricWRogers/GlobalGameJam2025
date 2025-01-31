@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 94d4a9715c7e8ea4d82e6e980e736285
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Helpers/ExcludeFromCtorWithAllPropertiesConventionTestAttribute.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: c09e7f64f2ecf0045820a512094f749f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Exceptions/ForbiddenException.cs
+  uploadId: 727040

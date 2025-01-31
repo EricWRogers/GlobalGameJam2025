@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: f735bdadb0bc70a4ebe2ff66facd428a
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Helpers/ReferenceExtensions.cs
+  uploadId: 727040

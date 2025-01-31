@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 4beb826566009604687f74d4eb3c623c
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/CreateWorkflowDispatch.cs
+  uploadId: 727040

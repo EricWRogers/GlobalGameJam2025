@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: e94f2f0b6ea6e5244bb5da67b459911f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/MarkdownClient.cs
+  uploadId: 727040

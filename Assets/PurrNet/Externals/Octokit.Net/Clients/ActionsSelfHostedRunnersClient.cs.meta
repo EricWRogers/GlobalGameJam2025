@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 4335c3f76a80e5b45a88bbf8df3d438c
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/ActionsSelfHostedRunnersClient.cs
+  uploadId: 727040

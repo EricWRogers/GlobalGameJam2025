@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 32993c2a7f115c84fa50a7ee4b514ee5
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Common/LockReason.cs
+  uploadId: 727040

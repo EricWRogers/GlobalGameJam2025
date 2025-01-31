@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: f6f364b3875959b43ab6e7c368f487fa
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/GistRequest.cs
+  uploadId: 727040

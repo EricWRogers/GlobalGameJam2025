@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 1a5f19ebd5668de4da0e3461a9d29b68
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/TagsClient.cs
+  uploadId: 727040

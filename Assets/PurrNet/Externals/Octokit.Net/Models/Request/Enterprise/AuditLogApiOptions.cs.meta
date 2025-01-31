@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 398d7bcfe65151f49920d8f55b1a4c2c
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/Enterprise/AuditLogApiOptions.cs
+  uploadId: 727040

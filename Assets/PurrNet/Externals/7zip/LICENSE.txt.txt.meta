@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 72692227f4e19da47acc54f71c42ddc7
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/7zip/LICENSE.txt.txt
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 1381960e190eb8748a7e627526fcc56f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Caching/IResponseCache.cs
+  uploadId: 727040

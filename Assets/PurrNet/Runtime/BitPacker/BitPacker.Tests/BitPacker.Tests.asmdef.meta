@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5be293ba618bd994ea269ecdcf611fd1
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Runtime/BitPacker/BitPacker.Tests/BitPacker.Tests.asmdef
+  uploadId: 727040

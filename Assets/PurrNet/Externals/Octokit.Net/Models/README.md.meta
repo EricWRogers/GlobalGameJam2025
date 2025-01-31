@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c066aac6b3fc12f44a67d4e839d322a1
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/README.md
+  uploadId: 727040

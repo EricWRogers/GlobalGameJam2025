@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 3c2e67794c6c74f49a118dc86db37944
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/DismissedReviewInfo.cs
+  uploadId: 727040

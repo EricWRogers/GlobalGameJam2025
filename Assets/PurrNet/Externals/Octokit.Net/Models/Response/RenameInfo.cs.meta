@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 42f386b0e139eec4b9de6ec4c26cd68d
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/RenameInfo.cs
+  uploadId: 727040

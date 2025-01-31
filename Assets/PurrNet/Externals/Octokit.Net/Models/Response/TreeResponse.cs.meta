@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: deac985dbfc0ee84081ebe0f45cf1f12
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/TreeResponse.cs
+  uploadId: 727040

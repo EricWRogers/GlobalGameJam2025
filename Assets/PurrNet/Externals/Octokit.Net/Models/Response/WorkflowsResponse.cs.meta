@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 16ac5cb70d0fe654bb933d93f4eab5dd
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/WorkflowsResponse.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 74dc98d065bb38e4880f7701d12a8b26
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/TimelineEventInfo.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: ddf1193c0a87b1647aae30b7551dbed0
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Http/HttpVerb.cs
+  uploadId: 727040

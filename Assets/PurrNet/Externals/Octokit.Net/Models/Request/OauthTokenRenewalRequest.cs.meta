@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: e67fe24ab797b1b4da8b8f4dd331439f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/OauthTokenRenewalRequest.cs
+  uploadId: 727040

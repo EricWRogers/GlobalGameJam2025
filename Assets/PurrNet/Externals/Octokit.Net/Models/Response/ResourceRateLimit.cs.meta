@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: de433056d51870e4587837b4a4313fc9
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/ResourceRateLimit.cs
+  uploadId: 727040

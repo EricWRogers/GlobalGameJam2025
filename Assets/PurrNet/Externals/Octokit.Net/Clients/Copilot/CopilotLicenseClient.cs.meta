@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: e07078909bd8a4f44ac4de9be567bfdc
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/Copilot/CopilotLicenseClient.cs
+  uploadId: 727040

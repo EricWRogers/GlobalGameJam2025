@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 6cbe2134b2dd0fd49acaa0c5243ef137
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/CombinedCommitStatus.cs
+  uploadId: 727040

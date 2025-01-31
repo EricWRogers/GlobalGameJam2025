@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 7a01a6ccd62b8d8489c54e2f6ac1c032
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/Meta.cs
+  uploadId: 727040

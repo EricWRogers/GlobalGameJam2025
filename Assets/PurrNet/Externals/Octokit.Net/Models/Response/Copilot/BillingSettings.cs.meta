@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 7de2f920d671e1c44878bd6b9d4b73c5
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/Copilot/BillingSettings.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: ec8fdf3921418c64290017d2b38c8149
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/UserRename.cs
+  uploadId: 727040

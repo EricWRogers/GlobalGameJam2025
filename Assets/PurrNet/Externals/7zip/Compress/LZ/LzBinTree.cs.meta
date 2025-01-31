@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 48f474b65263c954faba93003aadca71
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/7zip/Compress/LZ/LzBinTree.cs
+  uploadId: 727040

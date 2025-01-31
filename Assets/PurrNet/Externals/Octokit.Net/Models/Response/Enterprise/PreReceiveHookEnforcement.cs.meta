@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 423baea2ba3baba4c95fc3ea5e09dd60
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/Enterprise/PreReceiveHookEnforcement.cs
+  uploadId: 727040

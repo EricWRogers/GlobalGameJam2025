@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 77ffe96c53a9a4d41bf4f75db7e6e023
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Authentication/IAuthenticationHandler.cs
+  uploadId: 727040

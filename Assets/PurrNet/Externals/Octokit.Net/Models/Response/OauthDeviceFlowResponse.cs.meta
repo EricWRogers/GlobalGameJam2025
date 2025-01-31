@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 3854583916f997942890c84a57ed975c
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/OauthDeviceFlowResponse.cs
+  uploadId: 727040

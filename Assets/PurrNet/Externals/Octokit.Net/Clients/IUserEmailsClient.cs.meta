@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: c5edc625d7af55a488d04c5ff9e3d802
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/IUserEmailsClient.cs
+  uploadId: 727040

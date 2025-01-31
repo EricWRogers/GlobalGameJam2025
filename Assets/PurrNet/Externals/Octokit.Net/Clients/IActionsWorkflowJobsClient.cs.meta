@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 57d2e70aff9b15543a1269bfb5864131
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/IActionsWorkflowJobsClient.cs
+  uploadId: 727040

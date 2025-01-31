@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 2c731383585f5624f8b12db3a9cdf6e2
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/MergingClient.cs
+  uploadId: 727040

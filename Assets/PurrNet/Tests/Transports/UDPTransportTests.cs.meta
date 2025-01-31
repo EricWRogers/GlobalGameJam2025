@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 88138620700e9e64fade5b052be2d908
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Tests/Transports/UDPTransportTests.cs
+  uploadId: 727040

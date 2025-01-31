@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 974413719eeb9ed41abd6164d39a2bb4
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Tests/RPCs/StaticRPCsBuffering.cs
+  uploadId: 727040

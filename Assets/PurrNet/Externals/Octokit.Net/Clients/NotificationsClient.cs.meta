@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: b4e20911df72fbb4eb4b547633216093
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/NotificationsClient.cs
+  uploadId: 727040

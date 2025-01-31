@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 6a0e82ed9e981bf498b4a4b5229349c7
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/ICommitsClient.cs
+  uploadId: 727040

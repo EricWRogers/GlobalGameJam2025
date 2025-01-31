@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 66261b9628c73f840b0d22647c9626f0
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Clients/IOAuthClient.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: fb2413560fd0f194280855a601461603
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/Enterprise/MaintenanceModeActiveProcesses.cs
+  uploadId: 727040

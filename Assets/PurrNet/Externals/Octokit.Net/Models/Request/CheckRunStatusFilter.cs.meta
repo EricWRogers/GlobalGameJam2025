@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: c95e16bfb5f3cd649bb8f1ec10e053ae
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/CheckRunStatusFilter.cs
+  uploadId: 727040

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 4591a98f305033f4eaef3e18d7b79bac
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Helpers/SerializeNullAttribute.cs
+  uploadId: 727040

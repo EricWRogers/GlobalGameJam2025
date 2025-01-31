@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 1c67d3c9c1c8096459bcc4b15d91ad44
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Request/NewOrganizationWebHook.cs
+  uploadId: 727040

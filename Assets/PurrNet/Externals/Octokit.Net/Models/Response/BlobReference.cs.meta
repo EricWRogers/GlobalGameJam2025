@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 1a1812297105711429a0c8c7fa5dc662
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/Octokit.Net/Models/Response/BlobReference.cs
+  uploadId: 727040

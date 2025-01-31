@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: ebf2b35ee9695034eaaf62d4354f82ee
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297320
+  packageName: PurrNet
+  packageVersion: v1.6.0
+  assetPath: Assets/PurrNet/Externals/7zip/Compress/RangeCoder/RangeCoder.cs
+  uploadId: 727040
