@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,13 +13,13 @@ public class ServerTruth : NetworkBehaviour
 {
     public static ServerTruth Instance { get; private set; }
 
-
+    public Dictionary<ulong, PlayerData> connectedPlayers { get; private set; } //List of connected players and stuff about em.
     public enum ServerState
     {
         Prep, //Game setup
         Idle, //Not gameplay but something else.
         Ready, //The server is up and running, the network is healthy, and we are ready for the clients to speak to us.
-        Closing //CLosing down the server
+        Closing //Closing down the server
     }
 
     private ServerState currentState;
@@ -99,7 +99,9 @@ public class ServerTruth : NetworkBehaviour
 
             case ServerState.Ready:
                 Debug.Log("Server is in Ready state. Running the game...");
-               // CustomMessagingManager.SendNamedMessage("ServerReady", NetworkManager.Singleton.ConnectedClientsIds, new ClientRpcParams());
+                //CustomMessagingManager.SendNamedMessage("ServerReady", NetworkManager.Singleton.ConnectedClientsIds, new ClientRpcParams());
+
+                ServerIsReadyClientRPC();
 
 
                 break;
@@ -124,13 +126,60 @@ public class ServerTruth : NetworkBehaviour
         }
     }
 
-
-    //--------------------------------------------- All of these are tools the clients will invoke with a ServerRPC to get specific game info. The clientbase class will be useful.
-    public bool IsServerReady() 
-    {
-        return currentState == ServerState.Ready;
-    }
     
 
 
+    //--------------------------------------------- All of these are tools the clients will invoke with a ServerRPC to get specific game info. The clientbase class will be useful.
+    public bool IsServerReady() //Quick way to figure out if the server is good or not.
+    {
+        return currentState == ServerState.Ready;
+    }
+
+    [ClientRpc]
+    private void ServerIsReadyClientRPC() //Don't touch. This tells ALL clients they can start sending RPC's
+    {
+        ClientBase[] allClientBases = FindObjectsByType<ClientBase>(FindObjectsSortMode.None);
+        foreach (var clientBase in allClientBases)
+        {
+            clientBase.isReady = true;
+        }
+    }
+    public PlayerData PlayerDataConstruction(ulong clientId) //Constructs a player for joining players. Players will request what they should look like.
+    {
+        
+        List<ulong> connectedClients = new List<ulong>(NetworkManager.Singleton.ConnectedClientsIds);
+        int index = connectedClients.IndexOf(clientId);
+
+        ulong id = clientId;
+        string playerName = "Player " + (index + 1);
+        Color playerColor = GetPlayerColor(index);
+        int stocks = 3;
+       
+        PlayerData data = new PlayerData(id, playerName, playerColor, stocks);
+
+        connectedPlayers.Add(clientId, data); 
+        return data;
+    }
+
+    
+    private Color GetPlayerColor(int index)
+    {
+        switch (index)
+        {
+            case 0: return Color.blue;
+            case 1: return Color.red;
+            case 2: return Color.yellow;
+            case 3: return Color.green;
+            default: return Color.white; 
+        }
+    }
+
+    public Dictionary<ulong, PlayerData> GetAllPlayers()
+    {
+        return connectedPlayers;
+    }
+
 }
+
+
+

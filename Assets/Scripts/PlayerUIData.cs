@@ -7,5 +7,5 @@ public class PlayerUIData : MonoBehaviour
     public Image backgroundImg;
     public Image duckImg;
 
-    public UIData uiData;
+    //public UIData uiData;
 }
