@@ -24,12 +24,12 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Attack",
+                    "name": "BasicAttack",
                     "type": "Button",
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "PressAndRepeat(holdTime=0,repeatTime=2)",
                     "initialStateCheck": false
                 },
                 {
@@ -82,6 +82,33 @@
                     "type": "Button",
                     "id": "641cd816-40e6-41b4-8c3d-04687c349290",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability",
+                    "type": "Button",
+                    "id": "b7be74ed-3db2-4739-9286-391dbc8bafcf",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UseItem",
+                    "type": "Button",
+                    "id": "824ecbc8-5b98-4741-a1fa-c1b520294094",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ultimate",
+                    "type": "Button",
+                    "id": "b40faf43-5b82-431b-954e-e3d1a212963e",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -260,7 +287,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Attack",
+                    "action": "BasicAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -271,7 +298,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Attack",
+                    "action": "BasicAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -282,7 +309,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
-                    "action": "Attack",
+                    "action": "BasicAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -293,7 +320,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
-                    "action": "Attack",
+                    "action": "BasicAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -304,7 +331,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Attack",
+                    "action": "BasicAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -315,7 +342,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Attack",
+                    "action": "BasicAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -470,6 +497,39 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c3de1f13-18ec-4777-bfd8-d58e5ea84a01",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Ability",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b7e6efe-8ee1-4566-b13a-ec23a8c6d7ba",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "UseItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f87389ec-1f21-4e88-b0bd-ee7286a1eb50",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ultimate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

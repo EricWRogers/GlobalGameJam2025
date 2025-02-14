@@ -30,5 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/AidenAndEricTestScene.unity
     guid: fec16df1b2cae184f87a0e8a9fa4c413
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 7ab9b49a110d84445bf90cee69a69fb9, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
